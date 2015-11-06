@@ -1,0 +1,23 @@
+patient-portal:
+  name: Patient Portal
+  vars:
+    html:
+      # HTML elements by [data-brandy-id] attr
+      help-logo:
+        # Editable attrs on element with defaults
+        src: vecna-medical.png
+        alt: Vecna Medical Center
+      login-logo:
+        src: vecna-medical-white.png
+        alt: Vecna Medical Center
+      footer-logo:
+        src: footer-hospital-img.png
+        alt: Vecna Medical Center
+      copyright:
+        text: 2014 Vecna Medical Center
+    sass:
+      # Editable Sass variables with defaults
+      login-background: "#454b50"
+      login-color: "#fbfbfb"
+      button-primary-background-color: "#0090bf"
+      badge-color: "#0090bf"

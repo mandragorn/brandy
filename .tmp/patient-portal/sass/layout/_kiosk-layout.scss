@@ -1,0 +1,184 @@
+html, body {
+  height: 100%;
+}
+
+.ksk-header {
+  @extend %all, %columns, %vertical-align-middle;
+  position: relative;
+  height: $header-height;
+  z-index: 10;
+  background: $header-bg;
+  text-align: center;
+  color: $header-color;
+
+  > .btn, > button {
+    margin-top: ($header-height - $base-line-height - $base-size/2) / 2;
+
+    &:first-child {
+      float: left;
+    }
+
+    &:last-child {
+      float: right;
+    }
+  }
+
+  > .title {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+.ksk-body {
+  position: absolute;
+  top: $header-height;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.ksk-content {
+  @extend %all, %columns;
+  height: 82%;
+  overflow-y: auto;
+
+  &:only-child, &.x-large {
+    height: 100%;
+  }
+
+  &.large {
+    height: 82%;
+  }
+
+  &.medium, &.ksk-splash-content {
+    height: 64%;
+  }
+
+  &.small {
+    height: 41%;
+  }
+}
+
+.ksk-body > form {
+  height: 100%;
+}
+
+.ksk-actions {
+  @extend %all, %columns;
+  height: 18%;
+  text-align: center;
+
+  &.double, &.ksk-splash-actions {
+    height: 36%;
+  }
+}
+
+.ksk-actions:not(.ksk-splash-actions) {
+  .btn, button, input[type='submit'] {
+    display: block;
+    position: relative;
+    width: 100%;
+
+    & {
+      top: 50%;
+      margin-top: -$base-size;
+    }
+  }
+
+  &.double {
+    .btn:first-child, button:first-child, input[type='submit']:first-child {
+      margin-top: $base-size * -2 - $gutter-width/4;
+    }
+
+    .btn:last-child, button:last-child, input[type='submit']:last-child {
+      margin-top: $gutter-width/2;
+    }
+  }
+}
+
+.ksk-splash-actions {
+  > .btn {
+    margin: 0 $gutter-width/2;
+  }
+}
+
+.ksk-splash-logo-wrapper {
+  @extend %vertical-align-middle;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+
+  > .ksk-splash-logo {
+    width: auto;
+    height: auto;
+    max-width: 62%;
+    max-height: 90%;
+    vertical-align: middle;
+  }
+}
+
+.ksk-modal {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 5px 10px 15px rgba(0, 0, 0, 0.35);
+  z-index: 3050;
+  overflow: hidden;
+}
+
+
+// Portait only
+.landscape-only {
+  display: none;
+}
+
+// Landscape only
+@media only screen and (orientation : landscape) {
+  // .portrait-only {
+  //   display: none;
+  // }
+
+  // .landscape-only {
+  //   display: inline-block;
+  // }
+
+  .ksk-content.medium:not(.ksk-splash-content) {
+    width: 100%;
+    height: 82%;
+    overflow-y: auto;
+  }
+
+  .ksk-actions.double:not(.ksk-splash-actions) {
+    height: 18%;
+
+    .btn {
+      display: block;
+      width: 48%;
+      
+      &:first-child {
+        float: left;
+        margin-top: -$base-size;
+      }
+      
+      &:last-child {
+        float: right;
+        margin-top: -$base-size;
+      }
+    }
+  }
+
+  hgroup {
+    > h1, > h2, > h3 {
+      display: inline-block;
+      margin-left: 1ex;
+    }
+
+    :first-child {
+      margin-left: 0;
+    }
+  }
+}

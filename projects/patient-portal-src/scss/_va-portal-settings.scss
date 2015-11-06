@@ -1,0 +1,18 @@
+$va-red: #D1232A;
+$va-blue: #0064A1;
+
+$login-background:  $body-background;
+$login-color:       $base-color;
+
+// $link-default-color: $va-green;
+// $link-visited-color: lighten(desaturate($link-default-color, 30%), 10%);
+// $link-hover-color:   lighten($link-default-color, 10%);
+// $link-active-color:  lighten($link-default-color, 20%);
+
+// $button-default-color:            #006D75;
+// $button-default-background-color: #D9DFE4;
+$button-primary-background-color: $va-blue;
+// $button-selected-background-color:lighten($button-primary-background-color, 72%);
+
+$label-blue:    $va-blue;
+$badge-color:   $va-red;

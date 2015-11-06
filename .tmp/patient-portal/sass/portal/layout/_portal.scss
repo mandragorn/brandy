@@ -1,0 +1,394 @@
+// Part of a complete BREC/FaST
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: $body-background;
+  overflow-x: hidden;
+  overflow-x: auto\9; // IE8 and below
+}
+
+#app {
+  @extend %clearfix;
+  position: relative;
+  min-height: 100%;
+  min-width: 1000px\9; // IE8 and below
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  overflow-x: visible\9; // IE8 and below
+  overflow-y: visible\9; // IE8 and below
+}
+
+.global {
+  @extend %all;
+  display: table;
+  float: left;
+  height: calc(100% - 150px);
+  height: 100%\9; // IE9 and below (IE9 ignores calc() when display = table)
+  background: #f3f3f3;
+  z-index: 2;
+}
+
+  .page-content, .help {
+    display: table-cell;
+    vertical-align: top;
+    padding: $gutter-width/2;
+  }
+
+  .page-content {
+    background: $main-background;
+
+    &:focus {
+      outline: none;
+    }
+
+    > h2 {
+      @extend %all;
+      @extend %columns;
+    }
+  }
+
+    .page-title {
+      display: inline-block;
+      margin: 0 0 $gutter-width/4;
+      padding: 0 $gutter-width/2;
+      vertical-align: middle;
+
+      &.wizard-header {
+        @extend %all;
+
+        > span {
+          text-transform: none;
+        }
+      }
+
+      a > &:hover {
+        color: $link-hover-color;
+      }
+    }
+
+    .nav-toggle {
+      display: none;
+      @extend .icon-reorder;
+    }
+
+    .global-user-indicator {
+      display: none;
+    }
+
+    .help-toggle {
+      display: none;
+    }
+
+    a.header-back {
+      @extend %all;
+      @extend %columns;
+      margin-bottom: 1ex;
+      line-height: 1em;
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      color: lighten($base-color, 15%);
+      z-index: 20;
+
+      &:hover {
+        color: $link-default-color;
+      }
+    }
+
+  .content {
+    @extend %all;
+    @extend %columns;
+    padding-bottom: $gutter-width/2;
+  }
+
+.help {
+  width: 320px;
+  border-left: solid 1px $border-color;
+  background: #f3f3f3;
+
+  &.empty {
+    border-left: none;
+    background: #fbfbfb;
+  }
+
+  > h1 {
+    margin-top: 0;
+  }
+}
+
+  .help-content {
+    > img {
+      width: 270px;
+      height: auto;
+    }
+
+    > ul {
+      padding-left: $gutter-width/2;
+    }
+  }
+
+.page-footer {
+  @extend %all;
+  @extend %columns;
+  position: relative;
+  min-height: 100px;
+  padding: $gutter-width/2;
+  background: $nav-background-color;
+
+  &, a:link, a:visited, label {
+    text-decoration: none;
+    color: #bbb;
+  }
+}
+
+  .footer-hospital-link, .footer-links {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .footer-hospital-link {
+    margin-right: $gutter-width;
+  }
+
+    .footer-hospital-img {
+      height: 3em;
+    }
+
+  .footer-vecna-img {
+    position: absolute;
+    right: $gutter-width/2;
+    bottom: $gutter-width/2;
+    width: 100px;
+    margin-top: 1em;
+  }
+
+// Medium screen (Tablets and small monitors)
+@media only screen and (min-width : $small-max-width + 1) and (max-width : $medium-screen) {
+  .global {
+    position: relative;
+    left: 0;
+    width: 150%;
+    @include transition(left 0.5s);
+
+    &.focus-help {
+      left: -50%;
+    }
+  }
+
+  .help-toggle {
+    display: block;
+    position: absolute;
+    top: 75px;
+    right: 1px;
+    height: 100px;
+    width: 40px;
+    padding: 37px 0;
+    background: #f3f3f3;
+    border-top: solid 1px $border-color;
+    border-left: solid 1px $border-color;
+    border-bottom: solid 1px $border-color;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    color: $base-color;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    z-index: 3;
+    @include transition(right 0.5s);
+
+    &.focus-help {
+      right: 50%;
+    }
+
+    &:before {
+      content: $icon-info-sign;
+      vertical-align: middle;
+      font-family: $icon-font;
+      font-size: 25px;
+      color: lighten($base-color, 25%);
+    }
+
+    &.focus-help:before {
+      content: $icon-double-angle-right;
+    }
+
+    .focus-nav & {
+      display: none;
+    }
+  }
+
+  .page-content {
+    position: relative;
+    width: 66.666%;
+    height: 100%;
+    z-index: 2;
+  }
+}
+
+// Small screen (smartphones)
+@media only screen and (max-width : $small-max-width) {
+  body {
+    background: $nav-background-color;
+  }
+
+  .global, .page-content, .help {
+    display: block;
+  }
+
+  .page-content {
+    overflow-x: auto;
+  }
+
+  .global {
+    position: relative;
+    left: 0;
+    height: auto;
+    min-height: initial;
+    @include transition(left 0.25s);
+  }
+
+  .help-toggle {
+    display: none;
+  }
+
+  .topnav {
+    position: absolute;
+    left: -100%;
+    width: 90%;
+    width: calc(100% - 50px);
+    height: auto;
+    min-height: 100%;
+  }
+
+    .nav-list, .nav-item {
+      width: 100%;
+      height: auto;
+    }
+
+    .nav-link {
+      float: none;
+    }
+
+    .nav-dropdown {
+      display: block;
+      position: static;
+      min-width: 100%;
+      margin-top: 0;
+      background: none;
+    }
+
+  .focus-nav {
+    > .topnav {
+      left: 0;
+    }
+
+    > .global, footer {
+      left: $column-width * 8;
+      right: $column-width * -8;
+      left: calc(100% - 50px);
+      right: calc(-100% + 50px);
+    }
+
+
+    > .page-content {
+      opacity: 0.5;
+    }
+  }
+
+  .page-content, .help, footer {
+    @include clearfix();
+    position: relative;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: initial;
+  }
+
+  .page-content {
+    display: block;
+    margin-top: 50px;
+    padding: 1em 0 $gutter-width/2;
+    border-top: solid 1px $border-color;
+    border-left: none;
+    border-right: none;
+  }
+
+  .help {
+    display: block;
+    border-top: solid 1px $border-color;
+  }
+
+
+  a.nav-toggle {
+    display: block;
+    position: absolute;
+    top: 0;
+    height: 50px;
+    width: 50px;
+    z-index: 10;
+  }
+
+  .nav-toggle {
+    left: 0;
+    padding: 13px;
+    font-size: 1.5em;
+    color: $base-color;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    z-index: 10;
+
+    &:before {
+      color: $base-color;
+    }
+  }
+
+  .global-user-indicator {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    right: 0;
+    overflow: hidden;
+    padding: 14px;
+    font-size: 1.5em;
+    font-weight: 500;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    z-index: 1;
+  }
+
+  .menu-toolbar > .btn, .menu-toolbar > button, .menu-toolbar > .btn.secondary, .menu-toolbar > button.secondary {
+    float: left;
+    margin: 5px $gutter-width/2 5px 0;
+  }
+
+  .page-footer {
+    @include transition(left 0.25s);
+  }
+
+  a.index-link {
+    border-radius: 0 !important;
+  }
+
+  .register-info {
+    padding: 0;
+  }
+
+  // To avoid horizontal scrollbar within an overflow: auto
+  .picker {
+    width: 90%;
+  }
+}
+
+.print-only {
+  display: none;
+}

@@ -1,0 +1,146 @@
+// Part of a complete BREC/FaST
+
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+
+  // Make IE scale images properly
+  -ms-interpolation-mode: bicubic;
+
+  // Fix for buttons on Google Maps
+  .map & {
+    max-width: none;
+  }
+
+  &.full-width {
+    width: 100%;
+  }
+}
+
+.container {
+  width: $grid-width;
+  max-width: $grid-max-width;
+  margin: auto;
+}
+
+%clearfix {
+  // Uses Nicolas Gallagher's Micro Clearfix via Bourbon
+  @include clearfix();
+}
+
+.row {
+  width: auto;
+  margin: 0 (-$gutter-width/2);
+  @extend %clearfix;
+}
+
+%column, %columns {
+  display: block;
+  float: left;
+  padding: 0 $gutter-width/2;
+}
+
+%one    {
+  width: $column-width;
+}
+%two    {
+  width: $column-width * 2;
+}
+%three  {
+  width: $column-width * 3;
+}
+%four   {
+  width: $column-width * 4;
+}
+%five   {
+  width: $column-width * 5;
+}
+%six    {
+  width: $column-width * 6;
+}
+%seven  {
+  width: $column-width * 7;
+}
+%eight  {
+  width: $column-width * 8;
+}
+%nine   {
+  width: $column-width * 9;
+}
+%ten    {
+  width: $column-width * 10;
+}
+%eleven {
+  width: $column-width * 11;
+}
+%twelve {
+  width: $column-width * 12;
+  *width: calc(#{$column-width} * 12 - #{$gutter-width});
+}
+
+%all    {
+  @extend %twelve;
+}
+
+%offset-one    { margin-left: $column-width; }
+%offset-two    { margin-left: $column-width * 2; }
+%offset-three  { margin-left: $column-width * 3; }
+%offset-four   { margin-left: $column-width * 4; }
+%offset-five   { margin-left: $column-width * 5; }
+%offset-six    { margin-left: $column-width * 6; }
+%offset-seven  { margin-left: $column-width * 7; }
+%offset-eight  { margin-left: $column-width * 8; }
+%offset-nine   { margin-left: $column-width * 9; }
+%offset-ten    { margin-left: $column-width * 10; }
+%offset-eleven { margin-left: $column-width * 11; }
+
+%vertical-align-middle {
+  &:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+@media only screen and (max-width : $small-max-width) {
+  %one    { width: 100%; }
+  %two    { width: 100%; }
+  %three  { width: 100%; }
+  %four   { width: 100%; }
+  %five   { width: 100%; }
+  %six    { width: 100%; }
+  %seven  { width: 100%; }
+  %eight  { width: 100%; }
+  %nine   { width: 100%; }
+  %ten    { width: 100%; }
+  %eleven { width: 100%; }
+  %twelve { width: 100%; }
+
+  %hide-for-small, .hide-for-small { display: none !important; }
+}
+
+@media only print {
+  %one    { width: 100%; }
+  %two    { width: 100%; }
+  %three  { width: 100%; }
+  %four   { width: 100%; }
+  %five   { width: 100%; }
+  %six    { width: 100%; }
+  %seven  { width: 100%; }
+  %eight  { width: 100%; }
+  %nine   { width: 100%; }
+  %ten    { width: 100%; }
+  %eleven { width: 100%; }
+  %twelve { width: 100%; }
+}

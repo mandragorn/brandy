@@ -1,0 +1,119 @@
+// Part of a complete BREC/FaST
+
+body, button, input[type='submit'] {
+  font-family: $base-font;
+  font-size: $base-size;
+  font-weight: $base-weight;
+  line-height: 1.5em;
+  color: $base-color;
+}
+
+a {
+  &:link {
+    color: $link-default-color;
+  }
+
+  &:visited {
+    color: $link-visited-color;
+  }
+
+  &:hover {
+    color: $link-hover-color;
+  }
+
+  &:focus {
+    outline: solid 2px $link-hover-color;
+    outline-offset: -2px;
+  }
+
+  &:active {
+    color: $link-active-color;
+    outline: none;
+  }
+
+  &.nolink {
+    text-decoration: none;
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font;
+  font-weight: 700;
+  line-height: 1.25em;
+}
+
+h1 {
+  font-size: 1.6em;
+
+  small {
+    font-size: (1/1.6)em;
+    font-weight: normal;
+    color: lighten($base-color, 25%);
+  }
+
+  // Small screen (smartphones)
+  @media only screen and (max-width : $small-max-width) {
+    font-size: 1.4em;
+
+    small {
+      font-size: (1/1.4)em;
+    }
+  }
+}
+
+h2 {
+  font-size: $base-size;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: lighten($base-color, 15%);
+  margin-top: 1.5em;
+
+  small {
+    margin-left: 1em;
+    font-size: $base-size;
+    font-size: 1rem;
+    font-weight: normal;
+    text-transform: none;
+    color: lighten($base-color, 25%);
+
+    > a {
+      margin-right: 1ex;
+    }
+  }
+}
+
+h3 {
+  margin-top: 1.5em;
+  font-size: $base-size;
+}
+
+h1, h2 {
+  > a:link, > a:visited {
+    color: $base-color;
+    text-decoration: none;
+  }
+}
+
+code, kbd, pre, samp {
+  font-family: $monospace-font;
+}
+
+.title {
+  margin: 0;
+}
+
+small {
+  font-weight: normal;
+  color: lighten($base-color, 15%);
+}
+
+// Do not break phone numbers
+.phone {
+  display: inline-block;
+}
+
+::selection {
+  background: #dc0081;
+  color: #fff;
+  text-shadow: none;
+}

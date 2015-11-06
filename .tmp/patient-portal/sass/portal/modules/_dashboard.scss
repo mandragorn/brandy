@@ -1,0 +1,33 @@
+// Part of a complete BREC/FaST
+
+.dashboard-profile {
+  @extend %all;
+  @extend %columns;
+  margin-bottom: $gutter-width/2;
+}
+
+  .dashboard-profile-img {
+    @extend %two;
+    float: left;
+  }
+
+  .dashboard-profile-meta {
+    @extend %columns;
+    padding-top: 1ex;
+
+    > h1 {
+      margin-top: 0;
+    }
+  }
+
+
+// Small screen (smartphones)
+@media only screen and (max-width : $small-max-width) {
+  .dashboard-profile {
+    margin-bottom: 0;
+  }
+
+    .dashboard-profile-meta {
+      padding: 0;
+    }
+}

@@ -1,0 +1,139 @@
+.form-insurance, .old-survey {
+  .label {
+    @extend label;
+    font-weight: normal;
+    color: $base-color;
+  }
+}
+
+.form-insurance {
+  legend {
+    @extend h2;
+    position: relative;
+    top: 1.75em;
+    margin-bottom: 2em;
+  }
+
+  label {
+    > input, > select, > .chosen-container {
+      display: block;
+    }
+  }
+}
+
+.survey-edit {
+  margin-left: 1em;
+
+  > img {
+    width: 20px;
+    margin-left: 1ex;
+  }
+}
+
+.old-survey {
+  .surveyItem {
+    @extend %all;
+    float: left;
+  }
+
+  .DESCRIPTIVE_TEXT {
+    margin-top: 2em;
+  }
+
+  .checkbox > label, .radio > label {
+    @extend .btn;
+
+    border: solid 1px $border-color;
+    background: none;
+    box-shadow: inset 0 1px #fff, 0 1px #fff;
+    font-family: $light-font;
+    color: $base-color;
+
+    &:hover {
+      background: white;
+    }
+  }
+
+  .radio > label {
+    display: block;
+    float: left;
+    margin: 0 0 0 -1px;
+    border-radius: 0;
+
+    &:first-of-type {
+      margin-left: 0;
+      border-top-left-radius: 2px;
+      border-bottom-left-radius: 2px;
+    }
+
+    &:last-of-type {
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+  }
+
+  .checkbox > input:focus + label, .radio > input:focus + label {
+    background: white;
+  }
+
+  .checkbox > input + label:before, .radio > input + label:before {
+    display: inline-block;
+    margin: 0 0.5ex 0 -0.5ex;
+    font-family: $icon-font;
+  }
+
+  .checkbox > input:not(.checked) + label:before, .radio > input:not(.checked) + label:before {
+    color: #aaa;
+  }
+
+  .checkbox > input:not(.checked) + label:before {
+    content: $icon-check-empty;
+  }
+
+  .radio > input:not(.checked) + label:before {
+    content: $icon-circle-blank;
+  }
+
+  .checkbox > input.checked + label, .radio > input.checked + label {
+    position: relative;
+    border-color: $link-default-color !important;
+    background: lighten($link-default-color, 60%);
+    color: $link-default-color !important;
+    z-index: 1;
+  }
+
+  .checkbox > input.checked + label:before {
+    content: $icon-check;
+    color: $link-default-color;
+  }
+
+  .radio > input.checked + label:before {
+    content: $icon-circle + " ";
+    color: $link-default-color;
+  }
+
+  .checkbox > input.checked + label, .radio > input.checked + label {
+    color: $button-default-color;
+  }
+
+  // Hide radio buttons and checkboxes within button groups
+  .checkbox > input, .radio > input {
+    position: absolute;
+    left: -9999em;
+  }
+
+  // Matrix Questions
+  table {
+    width: auto;
+    margin: 0 0 1em;
+  }
+
+    th, td[align=center] {
+      text-align: center;
+    }
+
+    td {
+      min-width: 2.5em;
+      border: solid 1px lighten($base-color, 50%);
+    }
+}

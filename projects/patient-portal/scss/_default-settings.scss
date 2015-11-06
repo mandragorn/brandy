@@ -1,0 +1,85 @@
+// Part of a complete BREC/FaST
+
+// Browser Options
+$touch-only: false;
+
+// App Colors
+$body-background: #fbfbfb;
+$main-background: #fbfbfb;
+$header-background: #fff;
+$nav-background-color: #454b50;
+$nav-color: #fbfbfb;
+$thread-background: $main-background;
+$border-color: #dadee0;
+$well-background: #f2f1f0;
+$clock-size: 24px;
+
+// Typography
+$base-font:         "proxima-nova", 'HelveticaNeue', Helvetica, arial, verdana, sans-serif;
+$base-size:         16px;
+$base-weight:       300;
+$base-line-height:  1.5em;
+$base-color:        #454b50;
+$heading-font:      "proxima-nova", 'HelveticaNeue', Helvetica, arial, verdana, sans-serif;
+$light-font:        "proxima-nova", 'HelveticaNeue', Helvetica, arial, verdana, sans-serif;
+$monospace-font:    'Inconsolata', monospace, sans-serif;
+
+// Login
+$login-background:  $base-color;
+$login-color:       $main-background;
+
+// Grid Settings
+// Set to 100% for a fluid grid
+// Set in px for a fixed grid
+$grid-width:   100%;
+
+// Max width of entire grid in px, for fluid grid
+$grid-max-width:  100%;
+$gutter-width:    50px;
+$column-count:    12;
+$column-width:    $grid-width / $column-count;
+
+// Links
+$link-default-color: #0090bf;
+$link-visited-color: lighten(desaturate($link-default-color, 30%), 10%);
+$link-hover-color:   lighten($link-default-color, 10%);
+$link-active-color:  lighten($link-default-color, 20%);
+
+// Buttons
+$button-default-background-color: #c7ced4;
+$button-default-color:            #0a5679;
+$button-primary-background-color: $link-default-color;
+$button-primary-color:            #fff;
+$button-warning-background-color: #A02300;
+$button-warning-color:            #fff;
+$button-selected-background-color:lighten($link-default-color, 60%);
+
+// Alerts
+$alert-default-color: #005875;
+$alert-success-color: #417e10;
+$alert-error-color:   #8b3e10;
+$alert-warning-color: #6c4f18;
+
+// Label colors
+$label-blue:    $link-default-color;
+$label-orange:  #bf4225;
+$label-green:   #53901f;
+
+// Badge colors
+$badge-color:         $button-primary-background-color;
+$badge-warning-color: $button-warning-background-color;
+
+// Responsiveness
+$small-max-width: 765px;
+$small-screen:    765px;
+$medium-screen:   1100px;
+$large-screen:    1440px;
+
+$screen: "only screen";
+$small: "only screen and (max-width:"#{$small-screen}")";
+$medium: "only screen and (min-width:"#{$medium-screen}")";
+$large: "only screen and (min-width:"#{$large-screen}")";
+$landscape: "only screen and (orientation: landscape)";
+$portrait: "only screen and (orientation: portrait)";
+
+$responsive-form: false;

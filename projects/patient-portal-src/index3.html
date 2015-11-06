@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="no-touch">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard - Patient Portal</title>
+  <link rel="stylesheet" media="screen" href="/stylesheets/screen.css">
+  <!-- <link rel="stylesheet" href="/stylesheets/screen-sierra.css"> -->
+  <!-- <link rel="stylesheet" media="screen" href="/stylesheets/screen-nmo.css"> -->
+  <!-- <link rel="stylesheet" media="screen" href="/stylesheets/screen-va.css"> -->
+  <link rel="stylesheet" media="print" href="/stylesheets/print.css">
+  <link rel="shortcut icon" href="favicon.ico" />
+
+  <!--[if lte IE 9]>
+    <link rel="stylesheet" media="screen" href="/stylesheets/ie9.css">
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+    <script src="/js/vendor/html5shiv.min.js"></script>
+  <![endif]-->
+
+  <script src="/js/vendor/jquery-1.9.1.min.js"></script>
+  <script>
+    window.getURLParameter = function(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <nav class="topnav" role="banner">
+  <a href="#main" class="skip-link">Skip to Content</a>
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a class="nav-link nav-dropdown-toggle " href="/index.html"><span class="nav-icon icon-home"></span>
+        <span class="link-title link-title-user">
+          
+            David
+          
+        </span>
+        <span class="nav-icon icon-caret-down"></span>
+      </a>
+      <span class="nav-icon icon-caret-down"></span>
+      <ul class="nav-dropdown">
+        <li class="nav-item"><a href="#" class="nav-link" data-modal="modal-switch-user"><span class="nav-icon icon-switch"></span> <span class="link-title">Switch Portal</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/personal.html"><span class="nav-icon icon-user"></span> <span class="link-title">Profile</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/family-access.html"><span class="nav-icon icon-group"></span> <span class="link-title">Family Access</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/care-team.html"><span class="nav-icon icon-user-md"></span> <span class="link-title">Care Team</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/activity-log.html"><span class="nav-icon icon-file"></span> <span class="link-title">Activity Log</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/settings.html"><span class="nav-icon icon-cog"></span> <span class="link-title">Settings</span></a></li></li>
+      </ul>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="/messages.html"><span class="nav-icon icon-chat"></span><span class='badge primary'>2</span> <span class="link-title">Messages</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="/appointments.html"><span class="nav-icon icon-calendar"></span><span class='badge primary'>4</span> <span class="link-title">Appointments</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="/bills.html"><span class="nav-icon icon-dollar-sign"></span> <span class="link-title">Bills</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-dropdown-toggle " href="/phr.html">
+        <span class="nav-icon icon-clip-board"></span><span class="badge primary">4</span>
+        <span class="link-title">Health Record</span>
+        <span class="nav-icon icon-caret-down"></span>
+      </a>
+      <span class="nav-icon icon-caret-down"></span>
+      <ul class="nav-dropdown nav-dropdown-phr">
+        <li class="nav-item">
+          <a class="nav-link " href="/allergies.html"><span class="nav-icon icon-allergies"></span> <span class="link-title">Allergies</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/problems.html"><span class="nav-icon icon-bandage"></span> <span class="link-title">Problems</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/vitals.html"><span class="nav-icon icon-heart"></span> <span class="link-title">Vitals</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/medications.html"><span class="nav-icon icon-pill"></span><span class='badge primary'>2</span> <span class="link-title">Medications</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/lab-results.html"><span class="nav-icon icon-bar-chart"></span><span class='badge primary'>2</span> <span class="link-title">Lab Results</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/immunizations.html"><span class="nav-icon icon-syringe"></span> <span class="link-title">Immunizations</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/care-plans.html"><span class="nav-icon icon-h-sign"></span> <span class="link-title">Care Plans</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/procedures.html"><span class="nav-icon icon-stethoscope"></span> <span class="link-title">Procedures</span></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link " href="/clinical-summaries.html"><span class="nav-icon icon-medkit"></span> <span class="link-title">Clinical Summaries</span></a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link " href="/download.html"><span class="nav-icon icon-download"></span> <span class="link-title">Download &amp; Send</span></a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  <ul class="nav-list secondary">
+<!--     <li class="nav-item">
+      <span class="nav-link nav-link-user nav-dropdown-toggle" tabindex="0">
+        <span class="nav-icon icon-user"></span>
+        <span class="link-title link-title-user">Account</span>
+        <span class="nav-icon icon-caret-down"></span>
+      </span>
+      <ul class="nav-dropdown">
+        <li class="nav-item"><a href="#" class="nav-link" data-modal="modal-switch-user"><span class="nav-icon icon-user"></span> <span class="link-title">Switch Portal</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/personal.html"><span class="nav-icon icon-user"></span> <span class="link-title">Profile</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/family-access.html"><span class="nav-icon icon-group"></span> <span class="link-title">Family Access</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/care-team.html"><span class="nav-icon icon-user-md"></span> <span class="link-title">Care Team</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/activity-log.html"><span class="nav-icon icon-file"></span> <span class="link-title">Activity Log</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/settings.html"><span class="nav-icon icon-cog"></span> <span class="link-title">Settings</span></a></li>
+        <li class="nav-item nav-dropdown-signout"><a class="nav-link nav-link-signout" href="/login.html" data-modal="modal-confirm-signout"><span class="nav-icon icon-lock"></span> <span class="link-title">Sign Out</span></a></li>
+      </ul>
+    </li> -->
+    <li class="nav-item nav-item-signout"><a class="nav-link" href="/login.html" data-modal="modal-confirm-signout"><span class="nav-icon icon-lock"></span> <span class="link-title">Sign Out</span></a></li>
+  </ul>
+</nav>
+    
+      <div class="help-toggle"></div>
+    
+
+    <div class="global">
+      <a href="#" class="nav-toggle" title="Show/hide navigation"></a>
+      <div class="global-user-indicator">
+        
+          David Jones
+        
+      </div>
+
+      <main class="page-content" id="main">
+        <div class="dashboard-profile">
+  <div class="hide-for-small">
+    <div class="dashboard-profile-img">
+      <img src="/img/patient-2.png" alt="Profile Picture" class="img-user-large">
+    </div>
+  </div>
+  <div class="dashboard-profile-meta">
+    <h1>David Jones</h1>
+    <dl class="dl-inline">
+      <dt>Patient ID:</dt>
+      <dd>abc123def456</dd>
+      <dt>Last Login:</dt>
+      <dd>November 12, 2014</dd>
+    </dl>
+  </div>
+</div>
+
+<menu class="menu-toolbar">
+  <a class="btn" href="/appointments/request-start.html" id="tour-request">Request Appointment</a>
+  <a class="btn" href="/messages/new.html" id="tour-message">New Message</a>
+  <a class="btn secondary" href="/download.html">Download Your PHR</a>
+</menu>
+
+<!-- <h2>Upcoming Appointments</h2>
+<ol class="index index-grid">
+      <li class="index-item appointments-item ">
+      <a href="appointments/ct-scan-appointment.html" class="index-link">
+        <div class="appointments-item-heading ">
+          
+            <span class="index-icon icon-calendar"></span>
+            <span class="index-link-heading">Open for Registration</span>
+          
+        </div>
+        Sat, November 15, 2014 at 12:25 PM
+        <div class="header-meta">CT Scan Appointment</div>
+        
+          <span class="btn primary" onclick="location='appointments/ct-scan-appointment/register-profile.html'; return false;" id="tour-register">Register</span>
+        
+      </a>
+    </li>
+  
+</ol> -->
+
+<h2>To-Do</h2>
+<ol class="index index-list">
+  
+    <li class="index-item lab-results-item">
+      <a href="lab-results/complete-blood-count--platelets---auto-differential.html" class="index-link  unread">
+        <span class="index-icon icon-bar-chart"></span>
+        <span class="index-link-heading">Lab Results</span>
+        
+          Complete Blood Count, Platelets & Auto Differential
+        
+        <div class="index-link-action">
+          
+            <span class="btn"></span>
+          
+        </div>
+        
+          <div class="header-meta">October 02, 2014</div>
+        
+      </a>
+    </li>
+  
+    <li class="index-item bills-item">
+      <a href="bills/500-00.html" class="index-link  ">
+        <span class="index-icon icon-dollar-sign"></span>
+        <span class="index-link-heading">Bills</span>
+        
+          $500.00
+        
+        <div class="index-link-action">
+          
+            <span class="btn">Make Payment</span>
+          
+        </div>
+        
+          <div class="header-meta">October 06, 2014</div>
+        
+      </a>
+    </li>
+  
+    <li class="index-item bills-item">
+      <a href="bills/200-00.html" class="index-link  ">
+        <span class="index-icon icon-dollar-sign"></span>
+        <span class="index-link-heading">Bills</span>
+        
+          $200.00
+        
+        <div class="index-link-action">
+          
+            <span class="btn">Make Payment</span>
+          
+        </div>
+        
+          <div class="header-meta">October 16, 2014</div>
+        
+      </a>
+    </li>
+  
+    <li class="index-item appointments-item">
+      <a href="appointments/radiology-appointment.html" class="index-link  ">
+        <span class="index-icon icon-calendar"></span>
+        <span class="index-link-heading">Appointments</span>
+        
+          Saturday, November 15, 2014 at 10:30 AM
+        
+        <div class="index-link-action">
+          
+            <span class="btn"></span>
+          
+        </div>
+        
+          <div class="header-meta">April 04, 2014</div>
+        
+      </a>
+    </li>
+  
+    <li class="index-item appointments-item">
+      <a href="appointments/ct-scan-appointment.html" class="index-link  ">
+        <span class="index-icon icon-calendar"></span>
+        <span class="index-link-heading">Appointments</span>
+        
+          Saturday, November 15, 2014 at 12:25 PM
+        
+        <div class="index-link-action">
+          
+            <span class="btn" onclick="location='/appointments/ct-scan-appointment/register-profile.html'; return false;">Register</span>
+          
+        </div>
+        
+          <div class="header-meta">CT Scan Appointment</div>
+        
+      </a>
+    </li>
+  
+    <li class="index-item appointments-item">
+      <a href="appointments/ct-chest-appointment.html" class="index-link  unread">
+        <span class="index-icon icon-calendar"></span>
+        <span class="index-link-heading">Appointments</span>
+        
+          Tuesday, November 25, 2014 at 11:00 AM
+        
+        <div class="index-link-action">
+          
+            <span class="btn" onclick="location='/appointments/ct-chest-appointment/register-profile.html'; return false;">Register</span>
+          
+        </div>
+        
+          <div class="header-meta">CT Chest Appointment</div>
+        
+      </a>
+    </li>
+  
+    <li class="index-item appointments-item">
+      <a href="appointments/bc-dx-bilateral-appointment.html" class="index-link  unread">
+        <span class="index-icon icon-calendar"></span>
+        <span class="index-link-heading">Appointments</span>
+        
+          Tuesday, December 16, 2014 at 10:00 AM
+        
+        <div class="index-link-action">
+          
+            <span class="btn"></span>
+          
+        </div>
+        
+          <div class="header-meta">April 06, 2014</div>
+        
+      </a>
+    </li>
+  
+</ol>
+
+
+      </main>
+
+      <aside class="help ">
+        
+        <div class="help-content">  <img src="/img/vecna-medical.png" alt="Vecna Medical Center">
+  <ul>
+    <li>Manage existing and request future appointments</li>
+    <li>Complete appointment registration online</li>
+    <li>Update your insurance information</li>
+    <li>Review and pay your hospital bills</li>
+  </ul>
+
+  <a href="#!" class="btn" data-modal="modal-intro">Learn More</a>
+</div>
+      </aside>
+    </div>
+
+    <footer class="page-footer">
+      <a class="footer-hospital-link" href="/index.html"><img class="footer-hospital-img" src="/img/vecna-medical-white.png" alt="Vecna Medical Center" data-brandy-id="footer-logo"></a>
+      <!-- <a class="footer-hospital-link" href="/index.html"><img class="footer-hospital-img" src="/img/brand-logo-white.svg" alt="New Mexico Orthopaedics"></a> -->
+      <!-- <a class="footer-hospital-link" href="/index.html"><img class="footer-hospital-img" src="/img/brand-va-white.png" alt="VetLink"></a> -->
+      <!-- <a class="footer-hospital-link" href="/index.html"><img class="footer-hospital-img" src="/img/sierra-logo-white.png" alt="Sierra Providence Healthcare Network"></a> -->
+      <div class="footer-links">
+        <div>
+          <a href="#">Contact Us</a> &middot;
+          <a href="#">FAQ</a> &middot;
+          <a href="#">Legal</a> &middot;
+          <a href="#">Privacy Policy</a>
+        </div>
+        <small>&copy;<span data-brandy-id="copyright">2014 Vecna Medical Center</span>. All rights reserved. Vecna&reg; is a registered trademark of Vecna Technologies, Inc.</small>
+      </div>
+      <img class="footer-vecna-img" src="/img/powered-by-vecna-white.png" alt="Powered by Vecna">
+    </footer>
+  </div>
+
+  <div class="modals hidden">
+    <div class="modal modal-full hidden" id="modal-bill-details" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Hospital Bill from July 05, 2013</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+  <div class="modal-body">
+    <h2>Original Bill</h2>
+    <div>
+      <dl>
+        <dt>Amount Due</dt>
+        <dd>$200.00</dd>
+        <dt>Total Charges</dt>
+        <dd>$1800.00</dd>
+        <dt>Statement Date</dt>
+        <dd>June 04, 2013</dd>
+        <dt>Hospital Services Dates</dt>
+        <dd>2013-04-02 - 2013-05-01</dd>
+        <dt>Account #</dt>
+        <dd>67482504</dd>
+        <dt>Medical Record #</dt>
+        <dd>999062</dd>
+      </dl>
+
+      <h2>Summary of Charges</h2>
+      <dl>
+        <dt>Diagnostic Services</dt>
+        <dd>$600.00</dd>
+        <dt>Imaging Services</dt>
+        <dd>$1200.00</dd>
+        <dt>Total Charges</dt>
+        <dd>$1800.00</dd>
+      </dl>
+
+      <h2>Payment Activity</h2>
+      <table>
+        <tbody><tr>
+          <th>Payor</th>
+          <th>Total Payment</th>
+          <th>Total Adjustment</th>
+          <th>Last Payment Date</th>
+          <th>Last Payment Amount</th>
+          <th>Payor Balance</th>
+        </tr>
+        <tr>
+          <td>Blue Cross</td>
+          <td><span class="small-label">Total Payment:</span> -1100.00</td>
+          <td><span class="small-label">Total Adjustment:</span> 0.00</td>
+          <td><span class="small-label">Last Payment Date:</span> April 15, 2013</td>
+          <td><span class="small-label">Last Payment Amount:</span> -1100.00</td>
+          <td><span class="small-label">Payor Balance:</span> 0.00</td>
+        </tr>
+        <tr>
+          <td>Self Pay</td>
+          <td><span class="small-label">Total Payment:</span> 500.00</td>
+          <td><span class="small-label">Total Adjustment:</span> 0.00</td>
+          <td><span class="small-label">Last Payment Date:</span> May 05, 2013</td>
+          <td><span class="small-label">Last Payment Amount:</span> 250.00</td>
+          <td><span class="small-label">Payor Balance:</span> 200.00</td>
+        </tr>
+      </tbody></table>
+
+      <p>Thank you for choosing Vecna Medical for your healthcare services. This statement provides the current status of your account and detailed information concerning your outpatient services provided from April 2, 2013 through May 1, 2013.</p>
+      <p>This account is now due in the amount of $200.00. Please provide payment for this unpaid balance within the next 10 days.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-full hidden" id="modal-intro" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Learn More</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+
+  <div class="modal-body">
+    <div class="row">
+      <div class="half-content">
+        <h2>Request New Appointments</h2>
+        <p>Appointment requests through Patient Connect are quick and easy. Just choose the desired service, fill out a short pre-scheduling form, and choose from a calendar of available appointment times - all without picking up the phone. The hospital then confirms your appointment by email.</p>
+      </div>
+
+      <div class="half-content">
+        <h2>Register for Appointments</h2>
+        <p>Patient Connect lets you register in advance for your appointments, saving time and repeat work. The registration wizard guides you through all the steps that need to be completed prior to each appointment, saving your data as you progress. After completing all the steps, you receive a bar code for fast and easy check-in at one of the on-site kiosks.</p>
+      </div>
+
+      <!-- <div class="half-content">
+        <h2>Pay Bills</h2>
+        <p>Patient Connect lets you view and pay your hospital bills online, easily and quickly. Payment receipts are emailed to your email address and your account is credited within a few business days.</p>
+      </div> -->
+
+      <div class="half-content">
+        <h2>Manage Personal Information</h2>
+        <p>At any time, using any connected device, you can go to Patient Connect and change your personal information, including information for yourself and your emergency contact.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal hidden" id="modal-print" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">What would you like to print?</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+
+  <div class="modal-body">
+    <div class="btn-group">
+      <input type="checkbox" name="print-section" id="print-section-confirmation" value="confirmation" data-print-target=".barcode-container" checked><label for="print-section-confirmation" class="btn">Confirmation</label>
+      <input type="checkbox" name="print-section" id="print-section-directions" value="directions" data-print-target="#directions"><label for="print-section-directions" class="btn">Directions</label>
+      <!-- <input type="checkbox" name="print-section" id="print-section-questionnaire" value="questionnaire"><label for="print-section-questionnaire" class="btn">Questionnaire</label> -->
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <a class="btn primary" href="#" data-action="print">Print</a>
+  </div>
+</div>
+
+<div class="modal modal-small hidden" id="modal-confirm-signout" tabindex="-1">
+  <div class="modal-header">
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+
+  <div class="modal-body modal-prompt">
+    Are you sure you want to sign out?
+  </div>
+
+  <div class="modal-footer">
+    <a class="btn primary" href="/login.html" id="intro-continue">Sign Out</a>
+    <a href="#" class="btn" data-action="modal-close">Stay</a>
+  </div>
+</div>
+
+<div class="modal hidden" id="modal-switch-user" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Switch To Portal...</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+
+  <div class="modal-body">
+    <a class="profile-thumb" href="/index3.html"><!-- <img src="/img/patient-2.png" alt="" class="img-user"><br> -->David Jones<div>(Spouse)</div></a>
+    <a class="profile-thumb" href="#!"><!-- <img src="/img/patient-3.png" alt="" class="img-user"><br> -->Terry Jones<div>(Child)</div></a>
+    <a class="profile-thumb" href="#!"><!-- <img src="/img/patient-4.png" alt="" class="img-user"><br> -->Catherine Jones<div>(Child)</div></a>
+  </div>
+
+  <div class="modal-footer">
+    <a href="#" class="btn" data-action="modal-close">Stay as Mary Smith</a>
+  </div>
+</div>
+
+<div class="modal modal-full hidden" id="modal-questionnaire" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Outpatient CT Scan Patient History</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+  <div class="modal-body">
+    <dl>
+      <dt>Weight in pounds (e.g., 118)</dt>
+      <dd>120</dd>
+      <dt>Part of body to be scanned</dt>
+      <dd>Shoulder</dd>
+      <dt>Have you had this same CT scan in the past 2 weeks?</dt>
+      <dd>No</dd>
+      <dt>Have you ever had contrast (dye) injected before?</dt>
+      <dd>Yes</dd>
+      <dt>Have you fallen in the past three months?</dt>
+      <dd>No</dd>
+      <dt>Have you had a barium study in the past two weeks?</dt>
+      <dd>No</dd>
+      <dt>Do you take Hydroxyurea, also known as Hydrea™, Droxia™ and Mylocel™?</dt>
+      <dd>No</dd>
+      <dt>Do you take Metformin (Glucophage® or Glucovance®)?</dt>
+      <dd>Yes</dd>
+      <dt>Do you use a continuous insulin pump?</dt>
+      <dd>No</dd>
+      <dt>Describe any imaging tests, surgeries, or procedures you have had performed in the area that is being scanned</dt>
+      <dd></dd>
+    </dl>
+  </div>
+</div>
+
+<div class="modal modal-full hidden" id="modal-questionnaire2" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Allergies &amp; Medication List</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+  <div class="modal-body">
+    <dl>
+      <dt>Do you have any allergies (e.g. penicillin, latex)?</dt>
+      <dd>No</dd>
+      <dt>Allergy Source</dt>
+      <dd>N/A</dd>
+      <dt>Allergy Reaction</dt>
+      <dd>N/A</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="modal modal-full hidden" id="modal-receipt" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Payment confirmation</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+  <div class="modal-body">
+    <dl>
+      <dt>Date:</dt>
+      <dd>04/15/12</dd>
+      <dt>Amount:</dt>
+      <dd>$320.00</dd>
+      <dt>Card:</dt>
+      <dd>xxxx-xxxx-xxxx-1111 Exp: 03/2016</dd>
+      <dt>Account:</dt>
+      <dd>67407006</dd>
+      <dt>Transaction ID:</dt>
+      <dd>T48SHR30S9P</dd>
+      <dt>Status:</dt>
+      <dd>Approved</dd>
+    </dl>
+  </div>
+</div>
+  </div>
+
+  <script src="/js/vendor/modernizr.custom.js"></script>
+  <script src="/js/vendor/jquery.scrollTo.min.js"></script>
+  <script src="/js/vendor/jquery.autogrow-textarea.js"></script>
+  <script src="/js/vendor/jquery.scrollIntoView.js"></script>
+  <!-- <script src="/js/vendor/jquery.tap.min.js"></script> -->
+  <script src="/js/vendor/moment.js"></script>
+  <script src="/js/vendor/pickadate/lib/picker.js"></script>
+  <script src="/js/vendor/pickadate/lib/picker.date.js"></script>
+  <script src="/js/vendor/pickadate/lib/legacy.js"></script>
+  <script src="/js/datepicker.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/uploader.js"></script>
+  <script src="/js/forms.js"></script>
+  <script src="/js/alerts.js"></script>
+  <script src="/js/tooltip.js"></script>
+  <script src="/js/input-format.jquery.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

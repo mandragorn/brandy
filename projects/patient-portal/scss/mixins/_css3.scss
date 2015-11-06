@@ -1,0 +1,6 @@
+// Part of a complete BREC/FaST
+// Mixins only. No direct CSS styling should be done from this file.
+
+@mixin filter($value) {
+  @include prefixer(filter, $value, webkit moz spec);
+}

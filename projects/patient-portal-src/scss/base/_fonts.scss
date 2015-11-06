@@ -1,0 +1,9 @@
+// Default fonts for Patient Portal
+
+@include font-face(icomoon, '../fonts/icomoon');
+@include font-face(proxima-nova, '../fonts/proxima-nova/ProximaNova-Light-webfont', 300);
+@include font-face(proxima-nova, '../fonts/proxima-nova/ProximaNova-LightIt-webfont', 300, italic);
+@include font-face(proxima-nova, '../fonts/proxima-nova/ProximaNova-Reg-webfont', 400);
+@include font-face(proxima-nova, '../fonts/proxima-nova/ProximaNova-RegIt-webfont', 400, italic);
+@include font-face(proxima-nova, '../fonts/proxima-nova/ProximaNova-Bold-webfont', 700);
+@include font-face(proxima-nova, '../fonts/proxima-nova/ProximaNova-BoldIt-webfont', 700, italic);

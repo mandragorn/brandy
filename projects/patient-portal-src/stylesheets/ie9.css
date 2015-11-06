@@ -1,0 +1,8 @@
+.loadingclock {
+  border: none;
+  border-radius: 0;
+  background: url(/img/loading.gif) no-repeat; }
+  .loadingclock.disappear {
+    display: none; }
+  .loadingclock:before, .loadingclock:after {
+    content: none; }

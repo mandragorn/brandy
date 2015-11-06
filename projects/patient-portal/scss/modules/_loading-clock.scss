@@ -1,0 +1,83 @@
+@include keyframes(spin) {
+  to {
+    @include transform(rotate( 360deg ));
+  }
+}
+
+@include keyframes(appear) {
+  from {
+    @include transform(scale(0.5));
+  }
+}
+
+@include keyframes(disappear) {
+  to {
+    @include transform(scale(0.5));
+  }
+}
+
+.loadingclock {
+  $clock-weight: ($clock-size * 0.075);
+  $clock-inner: $clock-size - 2 * $clock-weight;
+
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+
+  width: $clock-size;
+  height: $clock-size;
+
+  border: $clock-weight solid $base-color;
+  border-radius: 100%;
+
+  text-indent: 30px;
+  white-space: nowrap;
+
+  @include animation(appear 0.3s ease-in-out);
+
+  &.disappear {
+    @include animation(disappear 0.3s ease-in-out);
+  }
+
+  menu > & {
+    display: block;
+    float: left;
+    margin-top: 1ex;
+  }
+
+  &:before {
+    display: block;
+    position: absolute;
+    left: ( $clock-size / 2 ) - $clock-weight * 1.5;
+    top: $clock-inner * 0.05;
+
+    width: $clock-weight;
+    height: $clock-inner * 0.45 + $clock-weight * 0.5;
+
+    background-color: $base-color;
+
+    border-radius: $clock-weight * 0.5;
+
+    @include animation(spin 3s linear infinite);
+    content: "";
+    @include transform-origin(center $clock-inner * 0.45);
+  }
+
+  &:after {
+    display: block;
+    position: absolute;
+    left: ( $clock-size / 2 ) - $clock-weight * 1.5;
+    top: $clock-inner * 0.2;
+
+    width: $clock-weight;
+    height: $clock-inner * 0.3 + $clock-weight * 0.5;
+
+    background-color: $base-color;
+
+    border-radius: $clock-weight * 0.5;
+
+    @include animation(spin 6 * 3s linear infinite);
+    content: "";
+    @include transform-origin(center $clock-inner * 0.3);
+  }
+}

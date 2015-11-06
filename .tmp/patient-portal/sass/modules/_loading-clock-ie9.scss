@@ -1,0 +1,15 @@
+// IE 7-9 Fallback
+
+.loadingclock {
+  border: none;
+  border-radius: 0;
+  background: url(/img/loading.gif) no-repeat;
+
+  &.disappear {
+    display: none;
+  }
+
+  &:before, &:after {
+    content: none;
+  }
+}

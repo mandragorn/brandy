@@ -1,0 +1,183 @@
+// Part of a complete BREC/FaST
+
+// List pages
+
+.index-heading {
+  @extend %all;
+  @extend %columns;
+  margin-bottom: 1ex;
+}
+
+.index {
+  @extend %all;
+  float: left;
+  min-height: 1%;
+  margin: 0 0 1em;
+  padding: 0;
+  list-style: none;
+}
+
+  .index-item {
+    @extend %all;
+    float: left;
+    position: relative;
+    padding: 0;
+    border-top: solid 1px $border-color;
+
+    &:last-child {
+      border-bottom: solid 1px $border-color;
+    }
+
+    &:hover {
+      border-bottom-color: transparent;
+    }
+
+    &:hover, &:hover + & {
+      border-top-color: transparent;
+    }
+  }
+
+    a.index-link {
+      @extend %all;
+      @extend %columns;
+      position: relative;
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+      border-radius: 2px;
+      text-decoration: none;
+      font-family: $light-font;
+      color: $base-color;
+
+      &.unread {
+        font-weight: bold;
+
+        &:before {
+          content: "";
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 5px;
+          width: 10px;
+          height: 10px;
+          margin-top: -5px;
+          border-radius: 50%;
+          background: $link-default-color;
+        }
+
+        &:hover:before {
+          background: #fff;
+        }
+      }
+
+      &:hover {
+        background: $button-primary-background-color;
+        color: $button-primary-color;
+
+        .header-meta, .label {
+          color: $button-primary-color;
+        }
+      }
+    }
+
+      .index-barcode {
+        height: 100%;
+      }
+
+      .index-icon {
+        display: block;
+        position: relative;
+        float: left;
+        height: 2em;
+        width: 2em;
+        margin: -8px 15px -10px -15px;
+        padding-top: 16px;
+        font-size: 2em;
+        text-align: center;
+        overflow: hidden;
+        opacity: 0.3;
+
+        .unread > & {
+          opacity: 1;
+        }
+      }
+
+      .index-link-heading {
+        display: none;
+      }
+
+    .index-link-action {
+      float: right;
+      height: 48px;
+      max-width: 300px;
+      padding: 3px 0 3px 1ex;
+      text-align: right;
+
+      &:empty:after {
+        display: inline-block;
+        float: right;
+        padding-top: 10px;
+        font-family: $icon-font;
+        font-size: 2em;
+        opacity: 0.3;
+        vertical-align: middle;
+      }
+
+      > .label {
+        margin-top: 1ex;
+      }
+
+      @media only screen and (max-width : $small-max-width) {
+        visibility: hidden;
+        width: 0;
+        overflow: hidden;
+      }
+    }
+
+.phr-section {
+  @extend %clearfix;
+  padding: 1em 0;
+  border-top: solid 1px $border-color;
+
+  &:first-child {
+    padding: 0 0 1em;
+    border-top: none;
+  }
+
+  > h2 {
+    @extend %all;
+    @extend %columns;
+  }
+}
+
+  .phr-section-description, .phr-section-list {
+    @extend %six;
+    @extend %columns;
+    padding-bottom: 1em;
+  }
+
+  .phr-title {
+    @extend %eight;
+    @extend %columns;
+    font-weight: bold;
+  }
+
+  .phr-threads {
+    padding: 0;
+    list-style: none;
+  }
+
+    .phr-thread {
+      @extend %clearfix;
+      margin-bottom: 1ex;
+
+      dt {
+        @extend %four;
+        float: left;
+        text-align: right;
+      }
+
+      dd {
+        @extend %eight;
+        @extend %columns;
+      }
+    }

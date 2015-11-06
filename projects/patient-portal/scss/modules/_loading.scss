@@ -1,0 +1,170 @@
+// Part of a complete BREC/FaST
+
+// @-webkit-keyframes loading {
+//   0% {
+//     opacity: 1;
+//   }
+//   62% {
+//     opacity: 0.1;
+//   }
+//   100% {
+//     opacity: 0.1;
+//   }
+// }
+
+.loader {
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -15%;
+  color: #fff;
+
+  // @include filter(blur(15px));
+  // @include transform(scale(2));
+  // -webkit-transition: -webkit-filter 0.5s, -webkit-transform 0.5s;
+
+  // body.dim & {
+  //   @include filter(none);
+  //   @include transform(scale(1));
+  // }
+
+  // > span {
+  //   display: inline-block;
+  //   height: 22px;
+  //   width: 22px;
+  //   margin: 0 5px;
+  //   background: #eee;
+  //   vertical-align: middle;
+  //   border-radius: 100%;
+
+  //   opacity: 1;
+  //   -webkit-animation: loading 2.5s infinite alternate;
+
+  //   &:nth-of-type(2) {
+  //     -webkit-animation-delay: 0.4s;
+  //     height: 28px;
+  //     width: 28px;
+  //   }
+
+  //   &:nth-of-type(3) {
+  //     -webkit-animation-delay: 0.8s;
+  //     height: 32px;
+  //     width: 32px;
+  //   }
+
+  //   &:nth-of-type(4) {
+  //     -webkit-animation-delay: 1.2s;
+  //     height: 28px;
+  //     width: 28px;
+  //   }
+
+  //   &:nth-of-type(5) {
+  //     -webkit-animation-delay: 1.6s;
+  //   }
+  // }
+}
+
+.progress-msg {
+  display: inline-block;
+  position: relative;
+}
+
+  .progress-ellipsis {
+    display: block;
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    width: 0;
+    margin-left: 2px;
+    text-align: left;
+    font-family: $monospace-font;
+    overflow: hidden;
+    -webkit-animation: ellipsis 2s steps(4, end) infinite normal;
+  }
+
+// Not best use of mixin, but using @extend breaks things in Chrome
+@mixin progress-value {
+  background: lighten($button-primary-background-color, 20%);
+  @include linear-gradient(110deg,
+    lighten($button-primary-background-color, 30%) 25%,
+    lighten($button-primary-background-color, 15%) 45%,
+    lighten($button-primary-background-color, 15%) 75%,
+    lighten($button-primary-background-color, 30%) 95%,
+    lighten($button-primary-background-color, 30%));
+
+  background-size: 30px 10px;
+
+  box-shadow: inset -1px 1px 2px rgba(255, 255, 255, 0.5), 1px 0 1px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+
+  @include animation(progress-bar 1.5s infinite normal linear);
+}
+
+progress {
+  position: relative;
+  height: 10px;
+  background: #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.75);
+
+  &::-webkit-progress-bar {
+    background: #ddd;
+    box-shadow: inset 1px 1px 3px #444;
+    border-radius: 5px;
+  }
+
+  &:not([max])::-webkit-progress-bar {
+    @include progress-value;
+  }
+
+  &::-webkit-progress-value {
+    @include progress-value;
+  }
+
+  &::-moz-progress-bar {
+    @include progress-value;
+  }
+}
+
+button.progress {
+  padding-right: 2em;
+  // background: lighten($button-primary-background-color, 20%);
+  // @include linear-gradient(95deg,
+  //   transparentize(lighten($button-primary-background-color, 30%), 0.5) 25%,
+  //   transparentize(lighten($button-primary-background-color, 15%), 0.5) 45%,
+  //   transparentize(lighten($button-primary-background-color, 15%), 0.5) 75%,
+  //   transparentize(lighten($button-primary-background-color, 30%), 0.5) 95%,
+  //   transparentize(lighten($button-primary-background-color, 30%), 0.5));
+  // background-size: 30px 35px;
+  // background-color: $button-primary-background-color;
+  // color: #fff;
+  // text-shadow: 0 -1px rgba(0, 0, 0, 0.5);
+  // @include animation(progress-bar 1.5s infinite normal linear);
+}
+
+@include keyframes(ellipsis) {
+  from {
+    width: 0;
+  }
+  to {
+    width: 4ex;
+  }
+}
+
+@include keyframes(loading-bar) {
+  from {
+    @include transform(scale(0));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
+
+@include keyframes(progress-bar) {
+  from {
+    background-position-x: 0;
+  }
+  to {
+    background-position-x: -30px;
+  }
+}

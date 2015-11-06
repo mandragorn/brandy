@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en" class="no-touch">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UMass PRO Assessment - Patient Portal</title>
+  <link rel="stylesheet" media="screen" href="/stylesheets/screen.css">
+  <!-- <link rel="stylesheet" href="/stylesheets/screen-sierra.css"> -->
+  <!-- <link rel="stylesheet" media="screen" href="/stylesheets/screen-nmo.css"> -->
+  <!-- <link rel="stylesheet" media="screen" href="/stylesheets/screen-va.css"> -->
+  <link rel="stylesheet" media="print" href="/stylesheets/print.css">
+  <link rel="shortcut icon" href="favicon.ico">
+
+  <!--[if lte IE 9]>
+    <link rel="stylesheet" media="screen" href="/stylesheets/ie9.css">
+  <![endif]-->
+
+  <!--[if lt IE 9]>
+    <script src="/js/vendor/html5shiv.min.js"></script>
+  <![endif]-->
+
+  <script src="/js/vendor/jquery-1.9.1.min.js"></script>
+  <script>
+    window.getURLParameter = function(name) {
+      return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+    }
+  </script>
+</head>
+<body>
+  <div id="app">
+    <nav class="topnav" role="banner">
+  <a href="#main" class="skip-link">Skip to Content</a>
+  <ul class="nav-list">
+    <li class="nav-item">
+      <a class="nav-link nav-dropdown-toggle " href="/index.html"><span class="nav-icon icon-home"></span>
+        <span class="link-title link-title-user">
+          
+            Mary
+          
+        </span>
+        <span class="nav-icon icon-caret-down"></span>
+      </a>
+      <span class="nav-icon icon-caret-down"></span>
+      <ul class="nav-dropdown">
+        <li class="nav-item"><a href="#" class="nav-link" data-modal="modal-switch-user"><span class="nav-icon icon-switch"></span> <span class="link-title">Switch Portal</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/personal.html"><span class="nav-icon icon-user"></span> <span class="link-title">Profile</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/family-access.html"><span class="nav-icon icon-group"></span> <span class="link-title">Family Access</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/care-team.html"><span class="nav-icon icon-user-md"></span> <span class="link-title">Care Team</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/activity-log.html"><span class="nav-icon icon-file"></span> <span class="link-title">Activity Log</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/settings.html"><span class="nav-icon icon-cog"></span> <span class="link-title">Settings</span></a></li></ul></li>
+      </ul>
+    
+    <li class="nav-item">
+      <a class="nav-link " href="/messages.html"><span class="nav-icon icon-chat"></span><span class="badge primary">2</span> <span class="link-title">Messages</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="/appointments.html"><span class="nav-icon icon-calendar"></span><span class="badge primary">4</span> <span class="link-title">Appointments</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link " href="/bills.html"><span class="nav-icon icon-dollar-sign"></span> <span class="link-title">Bills</span></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link nav-dropdown-toggle " href="/phr.html">
+        <span class="nav-icon icon-clip-board"></span><span class="badge primary">4</span>
+        <span class="link-title">Health Record</span>
+        <span class="nav-icon icon-caret-down"></span>
+      </a>
+      <span class="nav-icon icon-caret-down"></span>
+      <ul class="nav-dropdown nav-dropdown-phr">
+        <li class="nav-item">
+          <a class="nav-link " href="/allergies.html"><span class="nav-icon icon-allergies"></span> <span class="link-title">Allergies</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/problems.html"><span class="nav-icon icon-bandage"></span> <span class="link-title">Problems</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/vitals.html"><span class="nav-icon icon-heart"></span> <span class="link-title">Vitals</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/medications.html"><span class="nav-icon icon-pill"></span><span class="badge primary">2</span> <span class="link-title">Medications</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/lab-results.html"><span class="nav-icon icon-bar-chart"></span><span class="badge primary">2</span> <span class="link-title">Lab Results</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/immunizations.html"><span class="nav-icon icon-syringe"></span> <span class="link-title">Immunizations</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/care-plans.html"><span class="nav-icon icon-h-sign"></span> <span class="link-title">Care Plans</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link " href="/procedures.html"><span class="nav-icon icon-stethoscope"></span> <span class="link-title">Procedures</span></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link " href="/clinical-summaries.html"><span class="nav-icon icon-medkit"></span> <span class="link-title">Clinical Summaries</span></a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link " href="/download.html"><span class="nav-icon icon-download"></span> <span class="link-title">Download &amp; Send</span></a>
+        </li>
+      </ul>
+    </li>
+  
+  <ul class="nav-list secondary">
+<!--     <li class="nav-item">
+      <span class="nav-link nav-link-user nav-dropdown-toggle" tabindex="0">
+        <span class="nav-icon icon-user"></span>
+        <span class="link-title link-title-user">Account</span>
+        <span class="nav-icon icon-caret-down"></span>
+      </span>
+      <ul class="nav-dropdown">
+        <li class="nav-item"><a href="#" class="nav-link" data-modal="modal-switch-user"><span class="nav-icon icon-user"></span> <span class="link-title">Switch Portal</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/personal.html"><span class="nav-icon icon-user"></span> <span class="link-title">Profile</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/family-access.html"><span class="nav-icon icon-group"></span> <span class="link-title">Family Access</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/care-team.html"><span class="nav-icon icon-user-md"></span> <span class="link-title">Care Team</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/activity-log.html"><span class="nav-icon icon-file"></span> <span class="link-title">Activity Log</span></a></li>
+        <li class="nav-item"><a class="nav-link" href="/settings.html"><span class="nav-icon icon-cog"></span> <span class="link-title">Settings</span></a></li>
+        <li class="nav-item nav-dropdown-signout"><a class="nav-link nav-link-signout" href="/login.html" data-modal="modal-confirm-signout"><span class="nav-icon icon-lock"></span> <span class="link-title">Sign Out</span></a></li>
+      </ul>
+    </li> -->
+    <li class="nav-item nav-item-signout"><a class="nav-link" href="/login.html" data-modal="modal-confirm-signout"><span class="nav-icon icon-lock"></span> <span class="link-title">Sign Out</span></a></li>
+  </ul>
+</nav>
+    
+
+    <div class="global">
+      <a href="#" class="nav-toggle" title="Show/hide navigation"></a>
+      <div class="global-user-indicator">
+        
+          Mary Smith
+        
+      </div>
+
+      <main class="page-content" id="main">
+        <style>
+  .survey-fields, .custom-ideas {
+    display: none;
+  }
+</style>
+
+<h1 class="page-title">UMass PRO Assessment</h1>
+
+<form class="content" action="">
+  <fieldset class="questionnaire">
+    <h2>Introduction</h2>
+    <label for="patient-id">Please input your Patient's ID Number</label>
+    <input type="text" id="patient-id">
+
+    <div class="form-question">We would like you to answer some questions about your health to help improve the information we have on you. It will take 10 to 15 minutes.</div>
+    <div class="btn-group">
+      <input type="radio" name="participate" id="participate-agree" value="agree">
+      <label for="participate-agree" class="btn" onclick="$(&apos;.survey-fields&apos;).slideDown();">I agree</label>
+      <input type="radio" name="participate" id="participate-disagree" value="disagree">
+      <label for="participate-disagree" class="btn" onclick="$(&apos;.survey-fields&apos;).slideUp();">No thanks, I do not want to participate</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="questionnaire survey-fields">
+    <h2>Personal Information</h2>
+    <div class="form-question">How confident are you filling out medical forms by yourself?</div>
+    <div class="btn-group">
+      <input type="radio" name="confidence" id="confidence-1" value="1">
+      <label for="confidence-1" class="btn">1. Not at all</label>
+      <input type="radio" name="confidence" id="confidence-2" value="2">
+      <label for="confidence-2" class="btn">2. A little bit</label>
+      <input type="radio" name="confidence" id="confidence-3" value="3">
+      <label for="confidence-3" class="btn">3. Somewhat</label>
+      <input type="radio" name="confidence" id="confidence-4" value="4">
+      <label for="confidence-4" class="btn">4. Quite a bit</label>
+      <input type="radio" name="confidence" id="confidence-5" value="5">
+      <label for="confidence-5" class="btn">5. Extremely</label>
+    </div>
+
+    <label for="first-name">First Name</label>
+    <input type="text" id="first-name">
+
+    <label for="last-name">Last Name</label>
+    <input type="text" id="last-name">
+
+    <div class="form-question">Sex</div>
+    <div class="btn-group">
+      <input type="radio" name="sex" id="sex-male" value="male">
+      <label for="sex-male" class="btn">Male</label>
+      <input type="radio" name="sex" id="sex-female" value="female">
+      <label for="sex-female" class="btn">Female</label>
+      <input type="radio" name="sex" id="sex-what" value="what">
+      <label for="sex-what" class="btn">I do not understand the question</label>
+      <input type="radio" name="sex" id="sex-na" value="na">
+      <label for="sex-na" class="btn">I prefer not to answer</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="questionnaire survey-fields">
+    <h2>Current Symptoms</h2>
+    <div class="form-question">1. On a scale of 0-10 (0 = no pain at all, 5 = moderate, 10 = extreme), how much pain have you been having with your current health problem?</div>
+    <div class="btn-group">
+      <input type="radio" name="pain" id="pain-0" value="0">
+      <label for="pain-0" class="btn" onclick="$(&apos;.pain-fields&apos;).slideUp();">0</label>
+      <input type="radio" name="pain" id="pain-1" value="1">
+      <label for="pain-1" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">1</label>
+      <input type="radio" name="pain" id="pain-2" value="2">
+      <label for="pain-2" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">2</label>
+      <input type="radio" name="pain" id="pain-3" value="3">
+      <label for="pain-3" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">3</label>
+      <input type="radio" name="pain" id="pain-4" value="4">
+      <label for="pain-4" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">4</label>
+      <input type="radio" name="pain" id="pain-5" value="5">
+      <label for="pain-5" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">5</label>
+      <input type="radio" name="pain" id="pain-6" value="6">
+      <label for="pain-6" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">6</label>
+      <input type="radio" name="pain" id="pain-7" value="7">
+      <label for="pain-7" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">7</label>
+      <input type="radio" name="pain" id="pain-8" value="8">
+      <label for="pain-8" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">8</label>
+      <input type="radio" name="pain" id="pain-9" value="9">
+      <label for="pain-9" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">9</label>
+      <input type="radio" name="pain" id="pain-10" value="10">
+      <label for="pain-10" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">10</label>
+    </div>
+    <div class="btn-group btn-group-full">
+      <input type="radio" name="pain" id="pain-what" value="what">
+      <label for="pain-what" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">I do not understand the question</label>
+    </div>
+    <div class="btn-group btn-group-full">
+      <input type="radio" name="pain" id="pain-na" value="na">
+      <label for="pain-na" class="btn" onclick="$(&apos;.pain-fields&apos;).slideDown();">I prefer not to answer</label>
+    </div>
+
+    <div class="pain-fields">
+      <div class="form-question">2. Please select where you have the worst pain</div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-1" value="1"><label for="pain-location-1" class="btn">1. Head</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-2" value="2"><label for="pain-location-2" class="btn">2. Neck</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-3" value="3"><label for="pain-location-3" class="btn">3. Back</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-4" value="4"><label for="pain-location-4" class="btn">4. Chest</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-5" value="5"><label for="pain-location-5" class="btn">5. Belly or stomach</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-6" value="6"><label for="pain-location-6" class="btn">6. Arm</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-7" value="7"><label for="pain-location-7" class="btn">7. Leg</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-8" value="8"><label for="pain-location-8" class="btn">8. Hand or fingers</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-9" value="9"><label for="pain-location-9" class="btn">9. Foot or toes</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-10" value="10"><label for="pain-location-10" class="btn">10. Genitals</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-11" value="11"><label for="pain-location-11" class="btn">11. Buttocks</label></div>
+      <div class="btn-group btn-group-full"><input type="radio" name="pain-location" id="pain-location-12" value="12"><label for="pain-location-12" class="btn">12. Other location not listed above</label></div>
+
+      <div class="form-question">Are you having any of the following symptoms? <small>Check all that apply.</small></div>
+      <div class="btn-group btn-group-full">
+        <input type="checkbox" name="symptom-injury" id="symptom-injury" value="injury">
+        <label for="symptom-injury" class="btn">1. Injury (such as a fall or accident)</label>
+      </div>
+      <div class="btn-group btn-group-full">
+        <input type="checkbox" name="symptom-swelling" id="symptom-swelling" value="swelling">
+        <label for="symptom-swelling" class="btn">2. Swelling</label>
+      </div>
+      <div class="btn-group btn-group-full">
+        <input type="checkbox" name="symptom-cut" id="symptom-cut" value="cut">
+        <label for="symptom-cut" class="btn">3. Cut or bleeding from the site that hurts</label>
+      </div>
+      <div class="btn-group btn-group-full">
+        <input type="checkbox" name="symptom-none" id="symptom-none" value="none">
+        <label for="symptom-none" class="btn">4.No, none of these syptoms</label>
+      </div>
+
+      <div class="form-question">Have your had pain like this before?</div>
+      <div class="btn-group">
+        <input type="radio" name="pain-before" id="pain-before-yes" value="yes">
+        <label for="pain-before-yes" class="btn">Yes</label>
+        <input type="radio" name="pain-before" id="pain-before-no" value="no">
+        <label for="pain-before-no" class="btn">No</label>
+      </div>
+    </div>
+  </fieldset>
+
+  <fieldset class="questionnaire survey-fields">
+    <h2>Medical History</h2>
+    <div class="form-question">Have you ever had... <small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-1" id="ever-had-1-1" value="1"><label for="ever-had-1-1" class="btn">1. Heart disease (coronary artery disease)</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-2" id="ever-had-1-2" value="2"><label for="ever-had-1-2" class="btn">2. A heart attack (myocardial infarction)</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-3" id="ever-had-1-3" value="3"><label for="ever-had-1-3" class="btn">3. High blood pressure (hyptertension)</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-4" id="ever-had-1-4" value="4"><label for="ever-had-1-4" class="btn">4. Congestive heart failure (CHF)</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-5" id="ever-had-1-5" value="5"><label for="ever-had-1-5" class="btn">5. Poor circulation in your arms or legs (peripheral vascular disease)</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-6" id="ever-had-1-6" value="6"><label for="ever-had-1-6" class="btn">6. Stroke</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-7" id="ever-had-1-7" value="7"><label for="ever-had-1-7" class="btn">7. No, none of these problems</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-8" id="ever-had-1-8" value="8"><label for="ever-had-1-8" class="btn">8. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-1-9" id="ever-had-1-9" value="9"><label for="ever-had-1-9" class="btn">9. I prefer not to answer</label></div><div class="form-question">Have you ever had...<small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-2-1" id="ever-had-2-1" value="1"><label for="ever-had-2-1" class="btn">1. Asthma</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-2-2" id="ever-had-2-2" value="2"><label for="ever-had-2-2" class="btn">2. Chronic obstructive pulmonary disease (COPD) or emphysema</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-2-3" id="ever-had-2-3" value="3"><label for="ever-had-2-3" class="btn">3. Chronic bronchitis</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-2-4" id="ever-had-2-4" value="4"><label for="ever-had-2-4" class="btn">4. No, none of these problems</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-2-5" id="ever-had-2-5" value="5"><label for="ever-had-2-5" class="btn">5. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-2-6" id="ever-had-2-6" value="6"><label for="ever-had-2-6" class="btn">6. I prefer not to answer</label></div>
+
+
+    <div class="form-question">Have you ever had... <small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-3-1" id="ever-had-3-1" value="1"><label for="ever-had-3-1" class="btn">1. Diabetes</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-3-2" id="ever-had-3-2" value="2"><label for="ever-had-3-2" class="btn">2. Cancer</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-3-3" id="ever-had-3-3" value="3"><label for="ever-had-3-3" class="btn">3. High cholesterol</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-3-4" id="ever-had-3-4" value="4"><label for="ever-had-3-4" class="btn">4. HIV or AIDS</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-3-5" id="ever-had-3-5" value="5"><label for="ever-had-3-5" class="btn">5. No, none of these problems</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-3-6" id="ever-had-3-6" value="6"><label for="ever-had-3-6" class="btn">6. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-3-7" id="ever-had-3-7" value="6"><label for="ever-had-3-7" class="btn">7. I prefer not to answer</label></div>
+
+    <div class="form-question">Have you ever had an emotional, mental health, or psychiatric problem? <small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-4-1" id="ever-had-4-1" value="1"><label for="ever-had-4-1" class="btn">1. Yes</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-4-1" id="ever-had-4-2" value="2"><label for="ever-had-4-2" class="btn">2. No</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-4-1" id="ever-had-4-3" value="3"><label for="ever-had-4-3" class="btn">3. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-4-1" id="ever-had-4-4" value="4"><label for="ever-had-4-4" class="btn">4. I prefer not to answer</label></div>
+
+
+    <div class="form-question">Have you ever had a problem with alcohol abuse or addiction? <small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-5-1" id="ever-had-5-1" value="1"><label for="ever-had-5-1" class="btn">1. Yes</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-5-2" id="ever-had-5-2" value="2"><label for="ever-had-5-2" class="btn">2. No</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-5-3" id="ever-had-5-3" value="3"><label for="ever-had-5-3" class="btn">3. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-5-4" id="ever-had-5-4" value="4"><label for="ever-had-5-4" class="btn">4. I prefer not to answer</label></div>
+
+
+
+    <div class="form-question">Have you ever had a problem with drug abuse or addiction? <small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-6-1" id="ever-had-6-1" value="1"><label for="ever-had-6-1" class="btn">1. Yes</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-6-2" id="ever-had-6-2" value="2"><label for="ever-had-6-2" class="btn">2. No</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-6-3" id="ever-had-6-3" value="3"><label for="ever-had-6-3" class="btn">3. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-6-4" id="ever-had-6-4" value="4"><label for="ever-had-6-4" class="btn">4. I prefer not to answer</label></div>
+
+
+    <div class="form-question">Have you ever had... <small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-1" id="ever-had-7-1" value="1"><label for="ever-had-7-1" class="btn">1. Depression</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-2" id="ever-had-7-2" value="2"><label for="ever-had-7-2" class="btn">2. Bipolar disorder (manic-depression)</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-3" id="ever-had-7-3" value="3"><label for="ever-had-7-3" class="btn">3. Anxiety disorder</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-4" id="ever-had-7-4" value="4"><label for="ever-had-7-4" class="btn">4. Panic disorder</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-5" id="ever-had-7-5" value="4"><label for="ever-had-7-5" class="btn">5. Post traumatic stress disorder</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-6" id="ever-had-7-6" value="4"><label for="ever-had-7-6" class="btn">6. Eating disorder, like anorexia or bulimia</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-7" id="ever-had-7-7" value="4"><label for="ever-had-7-7" class="btn">7. ADHD or ADD</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-8" id="ever-had-7-8" value="4"><label for="ever-had-7-8" class="btn">8. Schizophrenia or schizoaffective disorder</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-9" id="ever-had-7-9" value="4"><label for="ever-had-7-9" class="btn">9. Any other emotional or behavioral disorder</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-10" id="ever-had-7-10" value="4"><label for="ever-had-7-10" class="btn">10. No, none of these problems</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-11" id="ever-had-7-11" value="4"><label for="ever-had-7-11" class="btn">11. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-7-12" id="ever-had-7-12" value="4"><label for="ever-had-7-12" class="btn">12. I prefer not to answer</label></div>
+
+    <div class="form-question">Have you ever had any surgeries?</div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-8-1" id="ever-had-8-1" value="1"><label for="ever-had-8-1" class="btn">1. Yes</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-8-1" id="ever-had-8-2" value="2"><label for="ever-had-8-2" class="btn">2. No</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-8-1" id="ever-had-8-3" value="3"><label for="ever-had-8-3" class="btn">3. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-8-1" id="ever-had-8-4" value="4"><label for="ever-had-8-4" class="btn">4. I prefer not to answer</label></div>
+
+    <div class="form-question">In general, would you say your health is:</div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-9-1" id="ever-had-9-1" value="1"><label for="ever-had-9-1" class="btn">1. Poor</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-9-1" id="ever-had-9-2" value="2"><label for="ever-had-9-2" class="btn">2. Fair</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-9-1" id="ever-had-9-3" value="3"><label for="ever-had-9-3" class="btn">3. Good</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-9-1" id="ever-had-9-4" value="4"><label for="ever-had-9-4" class="btn">4. Very Good</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-9-1" id="ever-had-9-5" value="4"><label for="ever-had-9-5" class="btn">5. Excellent</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-9-1" id="ever-had-9-6" value="4"><label for="ever-had-9-6" class="btn">6. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-9-1" id="ever-had-9-7" value="4"><label for="ever-had-9-7" class="btn">7. I prefer not to answer</label></div>
+
+    <div class="form-question">Have you used tobacco in the last 30 days?</div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-10-1" id="ever-had-10-1" value="1"><label for="ever-had-10-1" class="btn">1. Yes</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-10-1" id="ever-had-10-2" value="2"><label for="ever-had-10-2" class="btn">2. No</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-10-1" id="ever-had-10-3" value="3"><label for="ever-had-10-3" class="btn">3. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-10-1" id="ever-had-10-4" value="4"><label for="ever-had-10-4" class="btn">4. I prefer not to answer</label></div>
+
+    <div class="form-question">How often do you have a drink containing alcohol?</div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-1" value="1"><label for="ever-had-11-1" class="btn">1. Never</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-2" value="2"><label for="ever-had-11-2" class="btn">2. Less than monthly</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-3" value="3"><label for="ever-had-11-3" class="btn">3. Monthly</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-4" value="4"><label for="ever-had-11-4" class="btn">4. Weekly (once a week)</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-5" value="4"><label for="ever-had-11-5" class="btn">5. 2 - 3 times a week</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-6" value="4"><label for="ever-had-11-6" class="btn">6. 4 - 6 times a week</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-7" value="4"><label for="ever-had-11-7" class="btn">7. Daily</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-8" value="4"><label for="ever-had-11-8" class="btn">8. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-11-1" id="ever-had-11-9" value="4"><label for="ever-had-11-9" class="btn">9. I prefer not to answer</label></div>
+
+    <div class="form-question">A standard drink is one 12-ounce can or bottle of beer, one glass of wine, one cocktail / mixed drink, or one shot of liquor. How many standard drinks containing alcohol do you have on a typical day when you are drinking?</div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-12-1" id="ever-had-12-1" value="1"><label for="ever-had-12-1" class="btn">1. 1 drink</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-12-2" id="ever-had-12-2" value="2"><label for="ever-had-12-2" class="btn">2. 2 drinks</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-12-3" id="ever-had-12-3" value="3"><label for="ever-had-12-3" class="btn">3. 3 drinks</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-12-4" id="ever-had-12-4" value="4"><label for="ever-had-12-4" class="btn">4. 4 drinks</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-12-5" id="ever-had-12-5" value="4"><label for="ever-had-12-5" class="btn">5. 5 - 6 drinks</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-12-6" id="ever-had-12-6" value="4"><label for="ever-had-12-6" class="btn">6. 7 - 9 drinks</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="ever-had-12-7" id="ever-had-12-7" value="4"><label for="ever-had-1-7" class="btn">7. 10 or more drinks</label></div>
+
+    <div class="form-question">How often do you have four or more drinks on one occasion?</div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-1" value="1"><label for="ever-had-13-1" class="btn">1. Never</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-2" value="2"><label for="ever-had-13-2" class="btn">2. Less than monthly</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-3" value="3"><label for="ever-had-13-3" class="btn">3. Monthly</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-4" value="4"><label for="ever-had-13-4" class="btn">4. Weekly (once a week)</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-5" value="4"><label for="ever-had-13-5" class="btn">5. 2 - 3 times a week</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-6" value="4"><label for="ever-had-13-6" class="btn">6. 4 - 6 times a week</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-7" value="4"><label for="ever-had-13-7" class="btn">7. Daily</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-8" value="4"><label for="ever-had-13-8" class="btn">8. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-13-1" id="ever-had-13-9" value="4"><label for="ever-had-13-9" class="btn">9. I prefer not to answer</label></div>
+
+    <div class="form-question">In the past year, have you used either an illegal drug or a prescription drug for non-medical reasons?</div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-14-1" id="ever-had-14-1" value="1"><label for="ever-had-14-1" class="btn">1. Yes</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-14-1" id="ever-had-14-2" value="2"><label for="ever-had-14-2" class="btn">2. No</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-14-1" id="ever-had-14-3" value="3"><label for="ever-had-14-3" class="btn">3. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-14-1" id="ever-had-14-4" value="4"><label for="ever-had-14-4" class="btn">4. I prefer not to answer</label></div>
+
+    <div class="form-question">Over the past 2 weeks, have you been feeling nervous, anxious, or on edge?</div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-15-1" id="ever-had-15-1" value="1"><label for="ever-had-15-1" class="btn">1. Not at all</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-15-1" id="ever-had-15-2" value="2"><label for="ever-had-15-2" class="btn">2. Several days</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-15-1" id="ever-had-15-3" value="3"><label for="ever-had-15-3" class="btn">3. More days than not</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-15-1" id="ever-had-15-4" value="4"><label for="ever-had-15-4" class="btn">4. Nearly every day</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-15-1" id="ever-had-15-5" value="4"><label for="ever-had-15-5" class="btn">5. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-15-1" id="ever-had-15-6" value="4"><label for="ever-had-15-6" class="btn">6. I prefer not to answer</label></div>
+
+    <div class="form-question">Over the past 2 weeks, have you been unable to stop or control your worrying?</div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-16-1" id="ever-had-16-1" value="1"><label for="ever-had-16-1" class="btn">1. Not at all</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-16-1" id="ever-had-16-2" value="2"><label for="ever-had-16-2" class="btn">2. Several days</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-16-1" id="ever-had-16-3" value="3"><label for="ever-had-16-3" class="btn">3. More days than not</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-16-1" id="ever-had-16-4" value="4"><label for="ever-had-16-4" class="btn">4. Nearly every day</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-16-1" id="ever-had-16-5" value="4"><label for="ever-had-16-5" class="btn">5. Do not understand question</label></div>
+    <div class="btn-group btn-group-full"><input type="radio" name="ever-had-16-1" id="ever-had-16-6" value="4"><label for="ever-had-16-6" class="btn">6. I prefer not to answer</label></div>
+
+    <div class="form-question">Over the past 2 weeks, have you been feeling down, depressed, or hopeless? <small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="dep-1-1" id="dep-1-1" value="1"><label for="dep-1-1" class="btn">1. Not at all</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="dep-1-2" id="dep-1-2" value="2"><label for="dep-1-2" class="btn">2. Several days</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="dep-1-3" id="dep-1-3" value="3"><label for="dep-1-3" class="btn">3. More days than not</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="dep-1-4" id="dep-1-4" value="4"><label for="dep-1-4" class="btn">4. Nearly every day</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="dep-1-5" id="dep-1-5" value="5"><label for="dep-1-5" class="btn">5. Do not understand the question</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="dep-1-6" id="dep-1-6" value="6"><label for="dep-1-6" class="btn">6. I prefer not to answer</label></div>
+
+    <div class="form-question">Over the past 2 weeks, have you had little interest or pleasure in doing things?<small>Check all that apply</small></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="p-1-1" id="p-1-1" value="1"><label for="p-1-1" class="btn">1. Not at all</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="p-1-2" id="p-1-2" value="2"><label for="p-1-2" class="btn">2. Several days</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="p-1-3" id="p-1-3" value="3"><label for="p-1-3" class="btn">3. More days than not</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="p-1-4" id="p-1-4" value="4"><label for="p-1-4" class="btn">4. Nearly every day</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="p-1-5" id="p-1-5" value="5"><label for="p-1-5" class="btn">5. Do not understand the question</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="p-1-6" id="p-1-6" value="6"><label for="p-1-6" class="btn">6. I prefer not to answer</label></div>
+
+    <div class="form-question">1. On a scale from 0-10 (0 = no stress at all, 5 = moderate, 10 = extreme), how much stress have you been experiencing?</div>
+    <div class="btn-group">
+      <input type="radio" name="stress" id="stress-0" value="0">
+      <label for="stress-0" class="btn">0</label>
+      <input type="radio" name="stress" id="stress-1" value="1">
+      <label for="stress-1" class="btn">1</label>
+      <input type="radio" name="stress" id="stress-2" value="2">
+      <label for="stress-2" class="btn">2</label>
+      <input type="radio" name="stress" id="stress-3" value="3">
+      <label for="stress-3" class="btn">3</label>
+      <input type="radio" name="stress" id="stress-4" value="4">
+      <label for="stress-4" class="btn">4</label>
+      <input type="radio" name="stress" id="stress-5" value="5">
+      <label for="stress-5" class="btn">5</label>
+      <input type="radio" name="stress" id="stress-6" value="6">
+      <label for="stress-6" class="btn">6</label>
+      <input type="radio" name="stress" id="stress-7" value="7">
+      <label for="stress-7" class="btn">7</label>
+      <input type="radio" name="stress" id="stress-8" value="8">
+      <label for="stress-8" class="btn">8</label>
+      <input type="radio" name="stress" id="stress-9" value="9">
+      <label for="stress-9" class="btn">9</label>
+      <input type="radio" name="stress" id="stress-10" value="10">
+      <label for="stress-10" class="btn">10</label>
+    </div>
+    <div class="btn-group btn-group-full">
+      <input type="radio" name="stress" id="stress-what" value="what">
+      <label for="stress-what" class="btn">I do not understand the question</label>
+    </div>
+    <div class="btn-group btn-group-full">
+      <input type="radio" name="stress" id="stress-na" value="na">
+      <label for="stress-na" class="btn">I prefer not to answer</label>
+    </div>
+  </fieldset>
+
+  <fieldset class="questionnaire survey-fields">
+    <h2>Questions about the Survey</h2>
+    <div class="form-question">Do you feel the length of this survey was:</div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="l-1-1" id="l-1-1" value="1"><label for="l-1-1" class="btn">1. Much too short</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="l-1-2" id="l-1-2" value="2"><label for="l-1-2" class="btn">2. A little too short</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="l-1-3" id="l-1-3" value="3"><label for="l-1-3" class="btn">3. About right</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="l-1-4" id="l-1-4" value="4"><label for="l-1-4" class="btn">4. A little too long</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="l-1-5" id="l-1-5" value="5"><label for="l-1-5" class="btn">5. Much too long</label></div>
+
+    <div class="form-question">How easy was it to read/understand the questions?</div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="und-1-1" id="und-1-1" value="1"><label for="und-1-1" class="btn">1. Very difficult</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="und-1-2" id="und-1-2" value="2"><label for="und-1-2" class="btn">2. Somewhat difficult</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="und-1-3" id="und-1-3" value="3"><label for="und-1-3" class="btn">3. Neither difficult nor easy</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="und-1-4" id="und-1-4" value="4"><label for="und-1-4" class="btn">4. Somewhat easy</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="und-1-5" id="und-1-5" value="5"><label for="und-1-5" class="btn">5. Very easy</label></div>
+
+    <div class="form-question">How easy was it to use the tablet to respond to the questions?</div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="tablet-1-1" id="tablet-1-1" value="1"><label for="tablet-1-1" class="btn">1. Very difficult</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="tablet-1-2" id="tablet-1-2" value="2"><label for="tablet-1-2" class="btn">2. Somewhat difficult</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="tablet-1-3" id="tablet-1-3" value="3"><label for="tablet-1-3" class="btn">3. Neither difficult nor easy</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="tablet-1-4" id="tablet-1-4" value="4"><label for="tablet-1-4" class="btn">4. Somewhat easy</label></div>
+    <div class="btn-group btn-group-full"><input type="checkbox" name="tablet-1-5" id="tablet-1-5" value="5"><label for="tablet-1-5" class="btn">5. Very easy</label></div>
+
+    <div class="form-question">Do you have any ideas on how to make this survey better?</div>
+    <div class="btn-group">
+      <input type="radio" name="idea-before" id="idea-before-yes" value="yes">
+      <label for="idea-before-yes" class="btn" onclick="$(&apos;.custom-ideas&apos;).slideDown();">Yes</label>
+      <input type="radio" name="idea-before" id="idea-before-no" value="no">
+      <label for="idea-before-no" class="btn" onclick="$(&apos;.custom-ideas&apos;).slideUp();">No</label>
+    </div>
+
+    <label class="custom-ideas" for="tell-us-id">Please tell us your ideas</label>
+    <textarea class="custom-ideas" type="text" id="tell-us-id"></textarea>
+  </fieldset>
+
+  <menu class="menu-toolbar form-buttons" type="toolbar">
+    <button class="primary" type="submit">Submit Answers</button>
+  </menu>
+</form>
+
+<div class="alert alert-scroll warning">
+  <span class="icon-angle-down"></span>
+  Scroll down for more questions.
+</div>
+      </main>
+
+      <aside class="help empty">
+        
+        <div class="help-content"></div>
+      </aside>
+    </div>
+
+    <footer class="page-footer">
+      <a class="footer-hospital-link" href="/index.html"><img class="footer-hospital-img" src="/_brandy/c7f25fb9ce2bc838fcc147c6e93b9802.jpg" alt="Vecna Medical Center" data-brandy-id="footer-logo"></a>
+      <!-- <a class="footer-hospital-link" href="/index.html"><img class="footer-hospital-img" src="/img/brand-logo-white.svg" alt="New Mexico Orthopaedics"></a> -->
+      <!-- <a class="footer-hospital-link" href="/index.html"><img class="footer-hospital-img" src="/img/brand-va-white.png" alt="VetLink"></a> -->
+      <!-- <a class="footer-hospital-link" href="/index.html"><img class="footer-hospital-img" src="/img/sierra-logo-white.png" alt="Sierra Providence Healthcare Network"></a> -->
+      <div class="footer-links">
+        <div>
+          <a href="#">Contact Us</a> &middot;
+          <a href="#">FAQ</a> &middot;
+          <a href="#">Legal</a> &middot;
+          <a href="#">Privacy Policy</a>
+        </div>
+        <small>&copy;<span data-brandy-id="copyright">2014 NMO</span>. All rights reserved. Vecna&reg; is a registered trademark of Vecna Technologies, Inc.</small>
+      </div>
+      <img class="footer-vecna-img" src="/img/powered-by-vecna-white.png" alt="Powered by Vecna">
+    </footer>
+  </div>
+
+  <div class="modals hidden">
+    <div class="modal modal-full hidden" id="modal-bill-details" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Hospital Bill from July 05, 2013</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+  <div class="modal-body">
+    <h2>Original Bill</h2>
+    <div>
+      <dl>
+        <dt>Amount Due</dt>
+        <dd>$200.00</dd>
+        <dt>Total Charges</dt>
+        <dd>$1800.00</dd>
+        <dt>Statement Date</dt>
+        <dd>June 04, 2013</dd>
+        <dt>Hospital Services Dates</dt>
+        <dd>2013-04-02 - 2013-05-01</dd>
+        <dt>Account #</dt>
+        <dd>67482504</dd>
+        <dt>Medical Record #</dt>
+        <dd>999062</dd>
+      </dl>
+
+      <h2>Summary of Charges</h2>
+      <dl>
+        <dt>Diagnostic Services</dt>
+        <dd>$600.00</dd>
+        <dt>Imaging Services</dt>
+        <dd>$1200.00</dd>
+        <dt>Total Charges</dt>
+        <dd>$1800.00</dd>
+      </dl>
+
+      <h2>Payment Activity</h2>
+      <table>
+        <tbody><tr>
+          <th>Payor</th>
+          <th>Total Payment</th>
+          <th>Total Adjustment</th>
+          <th>Last Payment Date</th>
+          <th>Last Payment Amount</th>
+          <th>Payor Balance</th>
+        </tr>
+        <tr>
+          <td>Blue Cross</td>
+          <td><span class="small-label">Total Payment:</span> -1100.00</td>
+          <td><span class="small-label">Total Adjustment:</span> 0.00</td>
+          <td><span class="small-label">Last Payment Date:</span> April 15, 2013</td>
+          <td><span class="small-label">Last Payment Amount:</span> -1100.00</td>
+          <td><span class="small-label">Payor Balance:</span> 0.00</td>
+        </tr>
+        <tr>
+          <td>Self Pay</td>
+          <td><span class="small-label">Total Payment:</span> 500.00</td>
+          <td><span class="small-label">Total Adjustment:</span> 0.00</td>
+          <td><span class="small-label">Last Payment Date:</span> May 05, 2013</td>
+          <td><span class="small-label">Last Payment Amount:</span> 250.00</td>
+          <td><span class="small-label">Payor Balance:</span> 200.00</td>
+        </tr>
+      </tbody></table>
+
+      <p>Thank you for choosing Vecna Medical for your healthcare services. This statement provides the current status of your account and detailed information concerning your outpatient services provided from April 2, 2013 through May 1, 2013.</p>
+      <p>This account is now due in the amount of $200.00. Please provide payment for this unpaid balance within the next 10 days.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal modal-full hidden" id="modal-intro" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Learn More</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+
+  <div class="modal-body">
+    <div class="row">
+      <div class="half-content">
+        <h2>Request New Appointments</h2>
+        <p>Appointment requests through Patient Connect are quick and easy. Just choose the desired service, fill out a short pre-scheduling form, and choose from a calendar of available appointment times - all without picking up the phone. The hospital then confirms your appointment by email.</p>
+      </div>
+
+      <div class="half-content">
+        <h2>Register for Appointments</h2>
+        <p>Patient Connect lets you register in advance for your appointments, saving time and repeat work. The registration wizard guides you through all the steps that need to be completed prior to each appointment, saving your data as you progress. After completing all the steps, you receive a bar code for fast and easy check-in at one of the on-site kiosks.</p>
+      </div>
+
+      <!-- <div class="half-content">
+        <h2>Pay Bills</h2>
+        <p>Patient Connect lets you view and pay your hospital bills online, easily and quickly. Payment receipts are emailed to your email address and your account is credited within a few business days.</p>
+      </div> -->
+
+      <div class="half-content">
+        <h2>Manage Personal Information</h2>
+        <p>At any time, using any connected device, you can go to Patient Connect and change your personal information, including information for yourself and your emergency contact.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal hidden" id="modal-print" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">What would you like to print?</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+
+  <div class="modal-body">
+    <div class="btn-group">
+      <input type="checkbox" name="print-section" id="print-section-confirmation" value="confirmation" data-print-target=".barcode-container" checked><label for="print-section-confirmation" class="btn">Confirmation</label>
+      <input type="checkbox" name="print-section" id="print-section-directions" value="directions" data-print-target="#directions"><label for="print-section-directions" class="btn">Directions</label>
+      <!-- <input type="checkbox" name="print-section" id="print-section-questionnaire" value="questionnaire"><label for="print-section-questionnaire" class="btn">Questionnaire</label> -->
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <a class="btn primary" href="#" data-action="print">Print</a>
+  </div>
+</div>
+
+<div class="modal modal-small hidden" id="modal-confirm-signout" tabindex="-1">
+  <div class="modal-header">
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+
+  <div class="modal-body modal-prompt">
+    Are you sure you want to sign out?
+  </div>
+
+  <div class="modal-footer">
+    <a class="btn primary" href="/login.html" id="intro-continue">Sign Out</a>
+    <a href="#" class="btn" data-action="modal-close">Stay</a>
+  </div>
+</div>
+
+<div class="modal hidden" id="modal-switch-user" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Switch To Portal...</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+
+  <div class="modal-body">
+    <a class="profile-thumb" href="/index3.html"><!-- <img src="/img/patient-2.png" alt="" class="img-user"><br> -->David Jones<div>(Spouse)</div></a>
+    <a class="profile-thumb" href="#!"><!-- <img src="/img/patient-3.png" alt="" class="img-user"><br> -->Terry Jones<div>(Child)</div></a>
+    <a class="profile-thumb" href="#!"><!-- <img src="/img/patient-4.png" alt="" class="img-user"><br> -->Catherine Jones<div>(Child)</div></a>
+  </div>
+
+  <div class="modal-footer">
+    <a href="#" class="btn" data-action="modal-close">Stay as Mary Smith</a>
+  </div>
+</div>
+
+<div class="modal modal-full hidden" id="modal-questionnaire" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Outpatient CT Scan Patient History</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+  <div class="modal-body">
+    <dl>
+      <dt>Weight in pounds (e.g., 118)</dt>
+      <dd>120</dd>
+      <dt>Part of body to be scanned</dt>
+      <dd>Shoulder</dd>
+      <dt>Have you had this same CT scan in the past 2 weeks?</dt>
+      <dd>No</dd>
+      <dt>Have you ever had contrast (dye) injected before?</dt>
+      <dd>Yes</dd>
+      <dt>Have you fallen in the past three months?</dt>
+      <dd>No</dd>
+      <dt>Have you had a barium study in the past two weeks?</dt>
+      <dd>No</dd>
+      <dt>Do you take Hydroxyurea, also known as Hydrea™, Droxia™ and Mylocel™?</dt>
+      <dd>No</dd>
+      <dt>Do you take Metformin (Glucophage® or Glucovance®)?</dt>
+      <dd>Yes</dd>
+      <dt>Do you use a continuous insulin pump?</dt>
+      <dd>No</dd>
+      <dt>Describe any imaging tests, surgeries, or procedures you have had performed in the area that is being scanned</dt>
+      <dd></dd>
+    </dl>
+  </div>
+</div>
+
+<div class="modal modal-full hidden" id="modal-questionnaire2" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Allergies &amp; Medication List</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+  <div class="modal-body">
+    <dl>
+      <dt>Do you have any allergies (e.g. penicillin, latex)?</dt>
+      <dd>No</dd>
+      <dt>Allergy Source</dt>
+      <dd>N/A</dd>
+      <dt>Allergy Reaction</dt>
+      <dd>N/A</dd>
+    </dl>
+  </div>
+</div>
+
+<div class="modal modal-full hidden" id="modal-receipt" tabindex="-1">
+  <div class="modal-header">
+    <h2 class="modal-heading">Payment confirmation</h2>
+    <a href="#" class="modal-close nolink"><span class="icon-remove"></span></a>
+  </div>
+  <div class="modal-body">
+    <dl>
+      <dt>Date:</dt>
+      <dd>04/15/12</dd>
+      <dt>Amount:</dt>
+      <dd>$320.00</dd>
+      <dt>Card:</dt>
+      <dd>xxxx-xxxx-xxxx-1111 Exp: 03/2016</dd>
+      <dt>Account:</dt>
+      <dd>67407006</dd>
+      <dt>Transaction ID:</dt>
+      <dd>T48SHR30S9P</dd>
+      <dt>Status:</dt>
+      <dd>Approved</dd>
+    </dl>
+  </div>
+</div>
+  </div>
+
+  <script src="/js/vendor/modernizr.custom.js"></script>
+  <script src="/js/vendor/jquery.scrollTo.min.js"></script>
+  <script src="/js/vendor/jquery.autogrow-textarea.js"></script>
+  <script src="/js/vendor/jquery.scrollIntoView.js"></script>
+  <!-- <script src="/js/vendor/jquery.tap.min.js"></script> -->
+  <script src="/js/vendor/moment.js"></script>
+  <script src="/js/vendor/pickadate/lib/picker.js"></script>
+  <script src="/js/vendor/pickadate/lib/picker.date.js"></script>
+  <script src="/js/vendor/pickadate/lib/legacy.js"></script>
+  <script src="/js/datepicker.js"></script>
+  <script src="/js/nav.js"></script>
+  <script src="/js/uploader.js"></script>
+  <script src="/js/forms.js"></script>
+  <script src="/js/alerts.js"></script>
+  <script src="/js/tooltip.js"></script>
+  <script src="/js/input-format.jquery.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

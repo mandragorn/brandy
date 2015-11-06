@@ -1,0 +1,383 @@
+a.unread {
+  font-weight: bold;
+}
+
+.contact-list {
+  @extend .row;
+  padding: 0;
+  list-style: none;
+}
+
+  .contact-item {
+    @extend %four;
+    @extend %columns;
+    padding: 0 $gutter-width/2 $gutter-width/2;
+  }
+
+  .contact {
+    border: solid 1px $border-color;
+    background: #fff;
+
+    @media screen and (max-width: $small-max-width) {
+      height: initial;
+      padding-bottom: initial;
+    }
+  }
+
+    .contact-header, .contact-body {
+      padding: $gutter-width/2;
+    }
+
+    .contact-header {
+      font-weight: bold;
+    }
+
+    .contact-body {
+      padding-top: 0;
+    }
+
+      .contact-name {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 1ex;
+      }
+
+      .contact-relationship {
+        font-size: 85%;
+        font-weight: normal;
+        color: lighten($base-color, 30%);
+      }
+
+    .contact-footer {
+      // position: absolute;
+      // bottom: 0;
+      // width: 100%;
+      // background: $well-background;
+      margin: 0 $gutter-width/2;
+      padding: $gutter-width/2 0;
+      border-top: solid 1px $border-color;
+    }
+
+.page-content > h1 {
+  @extend %all;
+  @extend %columns;
+}
+
+.page-btn {
+  position: fixed;
+  top: $gutter-width/2;
+  right: $gutter-width/2;
+  z-index: 30;
+
+  @media only screen and (max-width : $small-max-width) {
+    top: $gutter-width/4;
+  }
+}
+
+.main-action {
+  position: absolute;
+  top: $gutter-width/2;
+  right: $gutter-width/2;
+}
+
+.more-link {
+  @extend %all;
+  @extend %columns;
+  margin: $gutter-width/2 0;
+  padding: $gutter-width/2;
+  border-top: dashed 1px #ccc;
+  text-align: center;
+
+  &:hover {
+    @include linear-gradient($header-background, $body-background, $fallback: mix($header-background, $body-background));
+  }
+}
+
+.btn-next:after {
+  content: $icon-arrow-right;
+  display: inline-block;
+  margin-left: 1ex;
+  font-family: $icon-font;
+}
+
+.time-table {
+  @extend .hide-for-small;
+
+  th {
+    vertical-align: bottom;
+  }
+
+  td {
+    padding: 5px 0;
+    width: 11%;
+
+    &.time-location, &.time-none {
+      padding: 1ex;
+      font-size: 0.8em;
+    }
+
+    &.time-location {
+      width: 23%;
+    }
+  }
+}
+
+// Small screen (smartphones)
+.time-table-small {
+  display: none;
+
+  tr {
+    border-bottom: solid 1px $border-color;
+  }
+
+    td {
+      padding: 5px 0;
+
+      &.time-location, &.time-none {
+        padding: 1ex;
+        font-size: 0.8em;
+      }
+    }
+
+  @media only screen and (max-width : $small-max-width) {
+    display: table;
+  }
+}
+
+.time-none {
+  vertical-align: middle;
+  text-align: center;
+}
+
+.btn-time {
+  width: 100%;
+  padding: 2px;
+
+  > .btn {
+    width: 100%;
+    padding: 10px 0 !important;
+    font-size: 0.8em;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.well {
+  @extend %all;
+  @extend %columns;
+  position: relative;
+  margin-bottom: $gutter-width/2;
+  background: $well-background;
+
+  .btn-edit {
+    margin-top: $gutter-width/2;
+    float: right;
+  }
+
+  .btn-delete {
+    position: absolute;
+    bottom: $gutter-width/2;
+    right: $gutter-width/2;
+    color: $label-orange;
+  }
+}
+
+.strong-block {
+  @extend %all;
+  @extend %columns;
+  margin: $gutter-width/2 0;
+  background: #ffc;
+}
+
+.right {
+  float: right !important;
+}
+
+.img-user, .img-user-large {
+  border-radius: 50%;
+}
+
+.img-user {
+  width: 30px;
+  height: 30px;
+}
+
+//////////////////////
+// Registration Wizard
+//////////////////////
+
+.register-photos {
+  @extend %three;
+  float: left;
+  padding: {
+    top: $gutter-width/2;
+    bottom: $gutter-width/2;
+  }
+}
+
+.register-info {
+  @extend %seven;
+  @extend %columns;
+  padding-right: 0;
+}
+
+.insurance-heading {
+  float: left;
+  @extend %ten;
+}
+
+.img-upload-wrap {
+  display: inline-block;
+}
+
+.insurance-photos {
+  @extend %five;
+  @extend %columns;
+  padding: 0 0 1ex;
+
+  .img-placeholder, .img-placeholder.clear {
+    float: left;
+    width: 50%;
+    padding-left: $gutter-width/4;
+    padding-right: 0;
+
+    &:first-child {
+      padding-left: 0;
+      padding-right: $gutter-width/4;
+    }
+  }
+}
+
+.insurance-info {
+  @extend %columns;
+  padding-right: 0;
+
+  > dl {
+    margin-top: 0;
+  }
+}
+
+.remove-link {
+  display: block;
+  float: right;
+  clear: right;
+  margin-top: 1em;
+}
+
+.img-placeholder {
+  position: relative;
+  margin-top: 0;
+  text-align: center;
+  text-decoration: none;
+
+  &.clear {
+    @extend %all;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+
+    &:before {
+      content: "";
+      display: block;
+      height: 0;
+      padding-bottom: 61.8%;
+      border: dashed 2px $border-color;
+    }
+
+    &:after {
+      content: $icon-plus;
+      display: block;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      margin-top: -0.5em;
+      line-height: 1em;
+      font-family: $icon-font;
+      text-align: center;
+    }
+
+    > img {
+      display: none;
+    }
+  }
+
+  > img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+  .image-uploader-actions {
+    display: none;
+    position: relative;
+    height: 25px;
+    margin-top: -25px;
+    padding: 0 1ex;
+    border: solid 1px $border-color;
+    background: white;
+    z-index: 2;
+
+    :hover > & {
+      display: block;
+    }
+  }
+
+  .image-uploader-remove, .image-uploader-change {
+    .clear & {
+      display: none;
+    }
+  }
+
+  .image-uploader-choose {
+    display: none;
+
+    .clear & {
+      display: inline;
+    }
+  }
+
+.login-double fieldset label {
+  color: $base-color;
+}
+
+form {
+  float: left;
+  width: 100%;
+}
+
+.half-content {
+  @extend %six;
+  @extend %columns;
+}
+
+.important {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+// FAQ
+.faq-question {
+  font-weight: bold;
+}
+
+.faq-answer {
+  margin-bottom: 2em;
+}
+
+.profile-thumb {
+  @extend %three;
+  float: left;
+  padding: 1em;
+  text-align: center;
+
+  > .img-user {
+    height: 50px;
+    width: 50px;
+  }
+}

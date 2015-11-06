@@ -1,0 +1,18 @@
+$nmo-green: #006D75;
+$nmo-orange: #C66005;
+
+$login-background: #813b8e;
+$login-color: #fbf9c2;
+
+$link-default-color: $nmo-green;
+$link-visited-color: lighten(desaturate($link-default-color, 30%), 10%);
+$link-hover-color:   lighten($link-default-color, 10%);
+$link-active-color:  lighten($link-default-color, 20%);
+
+$button-default-color:            #006D75;
+$button-default-background-color: #D9DFE4;
+$button-primary-background-color: #c08f00;
+$button-selected-background-color:lighten($button-primary-background-color, 72%);
+
+$label-blue:    $nmo-green;
+$badge-color: #00ba00;

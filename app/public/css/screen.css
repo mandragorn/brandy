@@ -1,0 +1,143 @@
+html {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 19px;
+  color: #444;
+}
+
+body {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.site-heading {
+  display: block;
+  margin: 10px 0;
+  text-align: center;
+  font-size: 110px;
+  color: #8A3324;
+}
+
+path {
+  fill: #8A3324;
+}
+
+.tagline {
+  margin-top: -15px;
+  text-align: center;
+  color: #8A3324;
+}
+
+nav {
+  color: #999;
+}
+
+a {
+  text-decoration: none;
+  color: #8A3324;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:hover path {
+  fill: #be3628;
+}
+
+.flash {
+  margin-bottom: 1em;
+  padding: 1em;
+  border-radius: 3px;
+  background: #ffec77;
+}
+
+.success {
+  background: #c8ffa9;
+}
+
+.flash:empty {
+  display: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 1ex 1em 1ex 0;
+  border-top: solid 1px #ddd;
+  border-bottom: solid 1px #ddd;
+}
+
+td:first-child {
+  font-weight: bold;
+}
+
+fieldset {
+  position: relative;
+  margin: 0 0 1em;
+  padding: 1em;
+  border: none;
+  border-radius: 3px;
+  background: #f5f2f0;
+}
+
+  legend {
+    position: relative;
+    top: 2em;
+    margin-bottom: 1em;
+    padding: 0;
+    font-weight: bold;
+  }
+
+label {
+  float: left;
+  clear: both;
+  margin-top: 1em;
+  font-weight: 400;
+}
+
+input[type=text] {
+  display: block;
+  width: 15em;
+  margin-top: 1ex;
+  padding: 8px 1ex;
+  border: solid 1px #aaa;
+  border-radius: 2px;
+  background-color: #fff;
+  outline: none;
+  font-size: 1rem;
+}
+
+input[type=file] {
+  display: block;
+  width: 15em;
+  font-size: 1rem;
+}
+
+input[type='submit'], .button {
+  display: inline-block;
+  padding: 1ex 1em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background: #8A3324;
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+input[type='submit']:hover, .button:hover {
+  background: #be3628;
+  text-decoration: none;
+}
+
+.current-image {
+  margin: 1em 0;
+}

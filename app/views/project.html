@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{project.name}} | Brandy</title>
+  <link rel="stylesheet" href="/css/screen.css">
+</head>
+<body>
+  <a class="site-heading" href="/">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="100px" height="100px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve">
+      <g id="Your_Icon">
+        <path d="M66.681,23h-1.021c2.212,4,26.034,50.143-7.152,50.744c-1.998,0.043-3.73,0.227-5.262,0.256h-5.783   c-1.488-0.02-3.173-0.189-5.106-0.223C9.185,73.307,32.332,27,34.479,23h-1.064c0,0-29.116,53.057,8.321,53.588   c2.084,0.037,3.9,0.132,5.504,0.153L46.34,91.319l-14.403,1.504L30.2,94h40.366l-1.734-1.234l-14.417-1.427l-0.941-14.522   c1.65-0.031,3.518-0.219,5.672-0.264C96.604,75.873,66.681,23,66.681,23z"/>
+        <path d="M71.549,43h-3.524c0.5,1.594,0.923,3.022,1.233,4.049c2.083,6.926-3.387,20.476-6.365,17.542   c-2.962-2.928,1.852-7.22,2.055-11.66c0.143-3.026-0.838-6.557-1.961-9.931H28.89c-3.892,12.933-4.73,28.665,14.085,28.932   c1.783,0.032,3.336,0.05,4.708,0.068h5.333c1.411-0.027,3.009-0.059,4.852-0.098C76.67,71.561,75.623,55.892,71.549,43z"/>
+      </g>
+    </svg>
+  </a>
+  <nav>
+    <a href="/">Home</a> /
+    {{project.name}}
+  </nav>
+  <h2>{{project.name}} Brands</h2>
+
+  <div id="flash" class="flash {% if builtBrandName %}success{% endif %}">{% if builtBrandName %}
+    Done building {{project.name}} to use {{builtBrandName}} branding.
+    <a href="http://localhost:{{project.port}}" target="_blank">Go to site &rarr;</a>
+  {% endif %}</div>
+
+  <script>var flashEl = document.getElementById('flash');</script>
+
+  <table>
+    <tr>
+      <td>Default</td>
+      <td colspan="3"><a href="/{{project_id}}/default/use" onclick="flashEl.className='flash'; flashEl.innerText='Building {{project.name}} to use default branding...';">Use</a></td>
+    </tr>
+    {% for brand in brands %}
+      <tr>
+        <td>{{brand.name}}</td>
+        <td>
+          <a href="/{{project_id}}/{{brand.name|url_encode}}/use" onclick="flashEl.className='flash'; flashEl.innerText='Building {{project.name}} to use {{brand.name}} branding...';">Use</a>
+        </td>
+        <td>
+          <a href="/{{project_id}}/{{brand.name|url_encode}}">Edit</a>
+        </td>
+        <td>
+          <a href="/{{project_id}}/{{brand.name|url_encode}}/delete" onclick="return confirm('Do you really want to delete this brand?');">Delete</a>
+        </td>
+      </tr>
+    {% endfor %}
+    <tr>
+      <td colspan="4"><a href="/{{project_id}}/new-brand">New Brand</a></td>
+    </tr>
+  </table>
+
+  <p>
+    <a class="button" href="http://localhost:{{project.port}}" target="_blank">Go to site &rarr;</a>
+  </p>
+</body>
+</html>

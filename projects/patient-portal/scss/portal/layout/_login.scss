@@ -1,0 +1,68 @@
+.login-page {
+  background: $login-background;
+  color: $login-color;
+
+  label {
+    font-weight: 300;
+  }
+}
+
+.login-global {
+  min-height: calc(100% - 150px);
+  overflow: auto;
+}
+
+  .login-header {
+    width: 350px;
+    max-width: 90%;
+    margin: $gutter-width auto $gutter-width/2;
+    text-align: center;
+  }
+
+  .login {
+    width: 350px;
+    max-width: 90%;
+    margin: auto;
+    padding: $gutter-width/2;
+
+    > form > input {
+      width: 100%;
+    }
+  }
+
+  .login-double {
+    width: 700px;
+    max-width: 90%;
+    margin: auto;
+  }
+
+    a.forgot {
+      display: block;
+      float: right;
+      font-size: 0.9em;
+      color: lighten($base-color, 30%);
+    }
+
+    .no-account {
+      display: block;
+      float: right;
+      margin-top: 1ex;
+    }
+
+  .login-footer {
+    width: 100%;
+    text-align: center;
+    font-size: 0.9em;
+    text-align: center;
+    color: lighten($base-color, 30%);
+  }
+
+    .login-footer-content {
+      display: inline-block;
+      width: 500px;
+      max-width: 90%;
+    }
+
+    .powered-by-vecna {
+      max-width: 150px;
+    }

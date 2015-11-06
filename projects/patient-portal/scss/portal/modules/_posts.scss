@@ -1,0 +1,30 @@
+.post {
+  @extend %all;
+  @extend %columns;
+  position: relative;
+  padding: 0 $gutter-width/2;
+  background: none;
+  border: none;
+}
+
+  .post-header {
+    position: relative;
+    padding: 1ex 0 0;
+    border-bottom: solid 1px $border-color;
+    font-family: $light-font;
+    font-weight: bold;
+
+    > h1 {
+      margin: 0;
+    }
+  }
+
+    .header-meta {
+      font-size: 0.8em;
+      font-weight: normal;
+      color: lighten($base-color, 10%);
+
+      .index-icon ~ & {
+        margin-left: 64px;
+      }
+    }

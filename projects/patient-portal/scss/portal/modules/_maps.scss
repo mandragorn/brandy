@@ -1,0 +1,28 @@
+// .map-directions {
+//   @extend .content;
+//   padding-top: $gutter-width/2;
+// }
+
+  .directions-form {
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .directions, .map {
+    @extend %six;
+    @extend %columns;
+  }
+
+  .map {
+    position: relative;
+    height: 500px;
+    margin-top: $gutter-width/2;
+    padding: 0;
+    overflow: hidden;
+
+    @include transform(translateZ(0));
+  }
+
+  .marker-cell {
+    vertical-align: middle;
+  }
